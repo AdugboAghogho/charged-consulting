@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARGED CONSULTING - Strategic Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS (for hero carousel) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        :root {
+            --color-primary: #2563eb; /* Royal Blue */
+            --color-dark: #f8fafc; /* Light Background (Slate-50) */
+            --color-text-main: #0f172a; /* Slate-900 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark);
+            color: #334155; /* Slate-700 */
+            /* Adjusted subtle dot pattern for light theme to be more visible */
+            background-image: radial-gradient(circle at 1px 1px, #cbd5e1 1px, transparent 0);
+            background-size: 30px 30px;
+        }
+
+        /* Container to hold main content and ensure it sits above the background pattern */
+        main {
+            background-color: transparent; /* Main content background should be transparent to show body pattern */
+        }
+
+        /* Styling for sections that need a solid white background (like cards, contact form) */
+        .solid-section {
+            background-color: white;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, #2563eb, #4f46e5); /* Blue to Indigo */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card-icon-container {
+            @apply w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg;
+        }
+        /* Custom light inputs */
+        input[type="text"], input[type="email"], textarea {
+            @apply bg-white border border-slate-200 text-slate-900 rounded-xl p-4 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 outline-none shadow-sm;
+        }
+        
+        .stat-item {
+             @apply border-b md:border-b-0 md:border-r border-slate-200 p-6 last:border-r-0 last:border-b-0;
+        }
+        
+        /* Custom Button */
+        .btn-charged {
+            @apply bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-blue-700 transition duration-300 transform hover:scale-[1.05];
+        }
+        
+        /* Swiper custom styles */
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+        }
+        
+        /* Hero styles for the white UI mockup */
+        .hero-slide-content {
+            @apply bg-white/90 p-8 md:p-12 rounded-3xl shadow-2xl backdrop-blur-sm border border-slate-200;
+        }
+        .hero-slide-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Style for the new banner section */
+        .new-banner-container {
+            @apply p-8 md:p-16 bg-white rounded-3xl shadow-2xl border border-slate-200;
+        }
+        .video-placeholder {
+            @apply bg-slate-100 h-64 md:h-96 rounded-2xl flex items-center justify-center text-slate-400 text-6xl shadow-inner;
+        }
+    </style>
+</head>
+<body class="antialiased scroll-to-section">
+
+    <!-- Sticky Header/Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xl border-b border-slate-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo - Text-based for Light UI -->
+            <a href="#hero" class="flex items-center space-x-2 text-2xl font-bold tracking-tighter">
+                <i class="fa-solid fa-bolt text-blue-600"></i>
+                <span class="text-slate-900">CHARGED</span><span class="text-blue-600">CONSULTING</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#about" class="text-slate-600 hover:text-blue-600 transition">About</a>
+                <a href="#impact" class="text-slate-600 hover:text-blue-600 transition">Impact</a>
+                <a href="#methodology" class="text-slate-600 hover:text-blue-600 transition">Methodology</a>
+                <a href="#contact" class="px-5 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition shadow-md">
+                    Book Now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button (Placeholder) -->
+            <button class="md:hidden text-slate-900 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: HERO (Home) with Swiper -->
+        <section id="hero" class="relative pt-20 pb-32 overflow-hidden shadow-2xl bg-white">
+            <div class="container mx-auto px-6 relative z-10 min-h-[600px]">
+                <!-- Swiper container -->
+                <div class="swiper h-full">
+                    <!-- Slides -->
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1: Primary Focus -->
+                        <div class="swiper-slide" data-aos="fade-up">
+                            <div class="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+                                <div class="hero-slide-content" data-aos="fade-right" data-aos-delay="200">
+                                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
+                                        Build & Growth <span class="text-gradient">with Scalable Tools</span>
+                                    </h1>
+                                    <p class="text-lg text-slate-600 mb-8">
+                                        Easily adapt to changes and scale your operations with our flexible infrastructure, designed to support your business growth.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <a href="#contact" class="btn-charged bg-blue-600 text-white hover:bg-blue-700">Get Started <i class="fas fa-arrow-right ml-2"></i></a>
+                                        <a href="#booking-links" class="btn-charged bg-white text-slate-900 border border-slate-200 hover:bg-slate-50">Free trial</a>
+                                    </div>
+                                </div>
+                                <!-- Image container (Mimicking the visual style provided) -->
+                                <div class="hidden lg:flex justify-center" data-aos="fade-left" data-aos-delay="300">
+                                    <div class="relative bg-slate-100 rounded-3xl p-4 shadow-xl">
+                                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Consulting Team" class="hero-slide-image shadow-2xl"/>
+                                        <div class="absolute bottom-4 left-4 p-3 bg-white rounded-xl shadow-lg text-sm text-slate-700 font-semibold">Real-time analytics +</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Secondary Focus (Team) -->
+                        <div class="swiper-slide">
+                            <div class="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+                                <div class="hero-slide-content">
+                                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
+                                        Accelerate Success with <span class="text-gradient">Elite Advisory</span>
+                                    </h1>
+                                    <p class="text-lg text-slate-600 mb-8">
+                                        Access former Fortune 500 sales leaders and operating partners dedicated solely to optimizing your revenue model.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <a href="#about" class="btn-charged bg-blue-600 text-white hover:bg-blue-700">Meet Our Experts</a>
+                                        <a href="#contact" class="btn-charged bg-white text-slate-900 border border-slate-200 hover:bg-slate-50">Strategy Session</a>
+                                    </div>
+                                </div>
+                                <div class="hidden lg:flex justify-center">
+                                    <div class="relative bg-slate-100 rounded-3xl p-4 shadow-xl">
+                                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Strategy Session" class="hero-slide-image shadow-2xl"/>
+                                        <div class="absolute bottom-4 left-4 p-3 bg-white rounded-xl shadow-lg text-sm text-slate-700 font-semibold">Pipeline Mastery +</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+        <!-- NEW SECTION: DISCOVERY/JOURNEY BANNER (Based on user image) -->
+        <section id="discovery" class="relative py-24 solid-section shadow-2xl">
+            <div class="container mx-auto px-6">
+                <div class="new-banner-container" data-aos="fade-up">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Discover our journey and what drives us</h2>
+                        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                            Founded by data experts, we create cutting-edge SaaS analytics platforms tailored for businesses of all sizes.
+                        </p>
+                    </div>
+
+                    <div class="mb-12">
+                        <!-- Video Placeholder -->
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle text-blue-600 opacity-80 hover:opacity-100 cursor-pointer"></i>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-6 text-center border-t border-slate-200 pt-6">
+                        <!-- Metric 1 -->
+                        <div data-aos="fade-up" data-aos-delay="100">
+                            <p class="text-3xl font-extrabold text-slate-900 mb-1"><span class="count-up" data-target="95" data-suffix="%">95%</span></p>
+                            <p class="text-sm text-slate-500">Customer satisfaction rate, reflecting our dedication</p>
+                        </div>
+                        <!-- Metric 2 -->
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            <p class="text-3xl font-extrabold text-slate-900 mb-1"><span class="count-up" data-target="10" data-suffix="+" data-prefix="10">10+</span></p>
+                            <p class="text-sm text-slate-500">Innovation and Insight to users' financial journeys</p>
+                        </div>
+                        <!-- Metric 3 -->
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            <p class="text-3xl font-extrabold text-slate-900 mb-1"><span class="count-up" data-target="10" data-suffix="m" data-prefix="$">$10m</span></p>
+                            <p class="text-sm text-slate-500">Platform has ensuring secure and efficient financial</p>
+                        </div>
+                        <!-- Metric 4 -->
+                        <div data-aos="fade-up" data-aos-delay="400">
+                            <p class="text-3xl font-extrabold text-slate-900 mb-1"><span class="count-up" data-target="50" data-suffix="m">50m</span></p>
+                            <p class="text-sm text-slate-500">Users worldwide, providing them with financial solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="text-3xl font-extrabold text-slate-900 max-w-4xl mx-auto leading-normal">
+                        We are passionate about empowering individuals and businesses to take control of their finances
+                    </h3>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+        <!-- SECTION 2: SOCIAL PROOF / LOGOS -->
+        <section class="py-10 border-y border-slate-200 solid-section">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8" data-aos="fade-up">Trusted by Top Accelerators</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+                    <!-- Using FontAwesome icons as logo placeholders -->
+                    <div class="text-3xl text-slate-400" data-aos="fade-up" data-aos-delay="50"><i class="fab fa-aws"></i></div>
+                    <div class="text-3xl text-slate-400" data-aos="fade-up" data-aos-delay="100"><i class="fab fa-google"></i></div>
+                    <div class="text-3xl text-slate-400" data-aos="fade-up" data-aos-delay="150"><i class="fab fa-airbnb"></i></div>
+                    <div class="text-3xl text-slate-400" data-aos="fade-up" data-aos-delay="200"><i class="fab fa-stripe"></i></div>
+                    <div class="text-3xl text-slate-400" data-aos="fade-up" data-aos-delay="250"><i class="fab fa-uber"></i></div>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+        <!-- SECTION 3: IMPACT STATS (Animated Numbers) -->
+        <section id="impact" class="relative py-20 bg-slate-50 shadow-2xl">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="text-4xl font-bold text-slate-900 mb-6">Global <span class="text-gradient">Impact Results</span></h2>
+                        <p class="text-lg text-slate-600 mb-6">
+                            We deliver measurable ROI across continents. Our strategies are backed by rigorous data analysis and proven frameworks that deliver predictable results.
+                        </p>
+                        <a href="#contact" class="btn-charged bg-blue-600 text-white hover:bg-blue-700 inline-block">Calculate Your ROI</a>
+                    </div>
+                    <!-- Stats Grid -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-xl grid grid-cols-2 overflow-hidden" data-aos="zoom-in" data-section="impact">
+                        <!-- Metric 1 -->
+                        <div class="stat-item text-center">
+                            <p class="text-4xl font-extrabold text-slate-900 mb-2"><span class="count-up" data-target="500" data-suffix="M+">$</span></p>
+                            <p class="text-sm text-slate-500 font-medium">Revenue Generated</p>
+                        </div>
+                        <!-- Metric 2 -->
+                        <div class="stat-item text-center">
+                            <p class="text-4xl font-extrabold text-slate-900 mb-2"><span class="count-up" data-target="300" data-suffix="+"></span></p>
+                            <p class="text-sm text-slate-500 font-medium">Companies Scaled</p>
+                        </div>
+                        <!-- Metric 3 -->
+                        <div class="stat-item text-center">
+                            <p class="text-4xl font-extrabold text-slate-900 mb-2"><span class="count-up" data-target="35" data-suffix="%"></span></p>
+                            <p class="text-sm text-slate-500 font-medium">Avg. Conversion Lift</p>
+                        </div>
+                        <!-- Metric 4 -->
+                        <div class="stat-item text-center">
+                            <p class="text-4xl font-extrabold text-slate-900 mb-2"><span class="count-up" data-target="10" data-suffix="x"></span></p>
+                            <p class="text-sm text-slate-500 font-medium">ROI Year One</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+        <!-- NEW BANNER 1: Client Testimonial (Adjusted for Light Theme) -->
+        <section class="relative py-16 bg-blue-600 shadow-2xl" data-aos="fade-up">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <i class="fas fa-quote-left text-white text-4xl mb-6 opacity-80"></i>
+                <blockquote class="text-3xl italic text-white font-light leading-relaxed mb-6">
+                    "The methodology and execution from Charged Consulting were transformative. We achieved a 200% acceleration in ARR growth after implementing their RevOps Blueprint."
+                </blockquote>
+                <p class="text-lg font-semibold text-blue-200">— CEO, Hyperion Digital</p>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+        <!-- SECTION 4: WHO WE SERVE -->
+        <section id="serve" class="relative py-24 solid-section shadow-2xl">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center" data-aos="fade-up">Focused Expertise for Key Sectors</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Card 1: Private Equity -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600 hover:shadow-xl transition duration-300" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card-icon-container bg-blue-600 text-white"><i class="fas fa-piggy-bank text-2xl"></i></div>
+                        <h3 class="text-xl font-semibold mb-3 text-slate-900">Private Equity</h3>
+                        <p class="text-slate-600 text-sm">
+                            Optimizing sales multiples and implementing aggressive growth strategies for portfolio exits.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Mid-Market Enterprise -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600 hover:shadow-xl transition duration-300" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card-icon-container bg-blue-600 text-white"><i class="fas fa-building text-2xl"></i></div>
+                        <h3 class="text-xl font-semibold mb-3 text-slate-900">Mid-Market</h3>
+                        <p class="text-slate-600 text-sm">
+                            Scaling operational consistency and introducing predictability to mature revenue streams.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 3: Tech Startups -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600 hover:shadow-xl transition duration-300" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card-icon-container bg-blue-600 text-white"><i class="fas fa-rocket text-2xl"></i></div>
+                        <h3 class="text-xl font-semibold mb-3 text-slate-900">Tech Startups</h3>
+                        <p class="text-slate-600 text-sm">
+                            Building foundational sales processes and hiring infrastructure for seed-to-series B growth.
+                        </p>
+                    </div>
+
+                    <!-- Card 4: Merger Integration -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600 hover:shadow-xl transition duration-300" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="card-icon-container bg-blue-600 text-white"><i class="fas fa-link text-2xl"></i></div>
+                        <h3 class="text-xl font-semibold mb-3 text-slate-900">M&A Integration</h3>
+                        <p class="text-slate-600 text-sm">
+                            Harmonizing disparate sales teams and systems post-merger for maximum value capture.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+        <!-- NEW SECTION 5: Methodology Deep Dive -->
+        <section id="methodology" class="relative py-24 bg-slate-900 shadow-2xl">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12 text-center text-white" data-aos="fade-up">Our Proprietary Methodology</h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <div class="bg-slate-800/90 p-8 rounded-2xl shadow-xl border-t-4 border-amber-500" data-aos="fade-right" data-aos-delay="100">
+                        <i class="fas fa-microchip text-amber-400 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-white">AI-Powered Forensics</h3>
+                        <p class="text-gray-400 text-sm">
+                            Utilizing predictive AI to pinpoint pipeline friction and forecast optimal resource allocation with 99% accuracy.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800/90 p-8 rounded-2xl shadow-xl border-t-4 border-amber-500" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-sitemap text-amber-400 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-white">The RevOps Blueprint™</h3>
+                        <p class="text-gray-400 text-sm">
+                            Our proprietary framework for aligning Sales, Marketing, and Customer Success under a unified revenue operations structure.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-slate-800/90 p-8 rounded-2xl shadow-xl border-t-4 border-amber-500" data-aos="fade-left" data-aos-delay="300">
+                        <i class="fas fa-brain text-amber-400 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-white">Talent Optimization Matrix</h3>
+                        <p class="text-gray-400 text-sm">
+                            A proven system for assessing, training, and placing high-performing sales talent that matches your GTM strategy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+        
+        <!-- NEW BANNER 2: Sales Team Photo Banner (Replicating User Image) -->
+        <section class="relative py-16 bg-white shadow-2xl" data-aos="fade-up">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left mb-6 md:mb-0 md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
+                        READY TO <span class="text-blue-600">TRANSFORM</span> YOUR SALES?
+                    </h2>
+                    <a href="#contact" class="btn-charged bg-blue-600 text-white hover:bg-blue-700">
+                        BOOK A DISCOVERY CALL
+                    </a>
+                    <p class="text-xs text-slate-500 mt-4">Connect with our team to start defining your growth.</p>
+                </div>
+                
+                <!-- Image Placeholder with people -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&h=200&auto=format&fit=crop" alt="Professional Consulting Team" class="rounded-xl shadow-xl">
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+
+        <!-- SECTION 6: ABOUT US / LEADERSHIP -->
+        <section id="about" class="relative py-24 solid-section shadow-2xl">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center" data-aos="fade-up">Our Elite Team & Vision</h2>
+                
+                <!-- Team Grid -->
+                <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <!-- Leader 1 -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1599566150163-479fc57d452f?q=80&w=150&h=150&auto=format&fit=crop" alt="John Doe" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-blue-500/50 shadow-lg">
+                        <h4 class="text-xl font-semibold text-slate-900">John Doe</h4>
+                        <p class="text-blue-600 text-sm font-medium mb-2">Chief Strategy Officer</p>
+                        <p class="text-slate-500 text-xs">Ex-VP Sales, GlobalTech. 20+ years.</p>
+                    </div>
+                    <!-- Leader 2 -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&h=150&auto=format&fit=crop" alt="Jane Smith" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-blue-500/50 shadow-lg">
+                        <h4 class="text-xl font-semibold text-slate-900">Jane Smith</h4>
+                        <p class="text-sm text-blue-600 font-medium mb-2">Head of Operations</p>
+                        <p class="text-slate-500 text-xs">Former PE Operating Partner in SaaS.</p>
+                    </div>
+                    <!-- Leader 3 -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1544723795-3fb6469e779a?q=80&w=150&h=150&auto=format&fit=crop" alt="Alex Peterson" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-blue-500/50 shadow-lg">
+                        <h4 class="text-xl font-semibold text-slate-900">Alex Peterson</h4>
+                        <p class="text-sm text-blue-600 font-medium mb-2">Lead Consultant</p>
+                        <p class="text-slate-500 text-xs">RevOps and CRM implementation expert.</p>
+                    </div>
+                    <!-- Leader 4 -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29329?q=80&w=150&h=150&auto=format&fit=crop" alt="Maria Rodriguez" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover border-4 border-blue-500/50 shadow-lg">
+                        <h4 class="text-xl font-semibold text-slate-900">Maria Rodriguez</h4>
+                        <p class="text-sm text-blue-600 font-medium mb-2">Market Analyst</p>
+                        <p class="text-slate-500 text-xs">M&A and financial modeling focus.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+
+        <!-- NEW SECTION 7: Booking Links (Call to Action) -->
+        <section id="booking-links" class="relative py-24 bg-slate-900 shadow-2xl">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-6" data-aos="fade-up">Find Your Next Step</h2>
+                <p class="text-xl text-gray-400 mb-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Choose the consultation path that aligns with your current strategic priority.
+                </p>
+
+                <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Link Card 1: PE/M&A -->
+                    <div class="bg-slate-800/90 p-8 rounded-3xl shadow-2xl border-t-8 border-amber-500 text-center" data-aos="zoom-in-up" data-aos-delay="200">
+                        <i class="fas fa-piggy-bank text-amber-400 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-white mb-3">Equity Value Strategy</h3>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            For Private Equity firms focused on accelerating valuation for exit.
+                        </p>
+                        <a href="#contact" class="btn-charged text-sm bg-blue-600 hover:bg-blue-700">
+                            Schedule PE Session
+                        </a>
+                    </div>
+
+                    <!-- Link Card 2: Enterprise Growth -->
+                    <div class="bg-slate-800/90 p-8 rounded-3xl shadow-2xl border-t-8 border-amber-500 text-center" data-aos="zoom-in-up" data-aos-delay="300">
+                        <i class="fas fa-briefcase text-amber-400 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-white mb-3">Enterprise GTM Review</h3>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            For VP/C-Level executives seeking full-scale organizational and process alignment.
+                        </p>
+                        <a href="#contact" class="btn-charged text-sm bg-blue-600 hover:bg-blue-700">
+                            Request GTM Review
+                        </a>
+                    </div>
+
+                    <!-- Link Card 3: Talent & Training -->
+                    <div class="bg-slate-800/90 p-8 rounded-3xl shadow-2xl border-t-8 border-amber-500 text-center" data-aos="zoom-in-up" data-aos-delay="400">
+                        <i class="fas fa-user-tie text-amber-400 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-white mb-3">Talent & Coaching</h3>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            Focused consulting on sales hiring, onboarding, and ongoing performance coaching.
+                        </p>
+                        <a href="#contact" class="btn-charged text-sm bg-blue-600 hover:bg-blue-700">
+                            Explore Talent Services
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+        
+        <!-- SECTION 8: CONTACT FORM -->
+        <section id="contact" class="relative py-24 solid-section shadow-2xl">
+             <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col md:flex-row" data-aos="fade-up">
+                    <!-- Contact Info Side (Dark background for contrast) -->
+                    <div class="md:w-5/12 bg-slate-900 p-10 flex flex-col justify-between text-white relative">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500 rounded-full blur-[60px] opacity-20"></div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">Start the Conversation</h3>
+                            <p class="text-slate-300 mb-8">We will respond within one business day.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-3 text-slate-300">
+                                    <i class="fa-solid fa-phone text-amber-400"></i>
+                                    <span>+1 (555) 123-4567</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-slate-300">
+                                    <i class="fa-solid fa-envelope text-amber-400"></i>
+                                    <span>growth@chargedconsulting.com</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-slate-300">
+                                    <i class="fa-solid fa-location-dot text-amber-400"></i>
+                                    <span>Global Headquarters, NYC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Side (Light background) -->
+                    <div class="md:w-7/12 p-10">
+                         <h3 class="text-2xl font-bold text-slate-900 mb-6">Submit Your Inquiry</h3>
+                        <form onsubmit="event.preventDefault(); alertMessage('Request sent! We will contact you shortly.', 'success');" class="space-y-5">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                                    <input type="text" class="w-full" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Work Email</label>
+                                    <input type="email" id="email" placeholder="work@company.com" class="w-full">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Company Name & Role</label>
+                                <input type="text" id="company" placeholder="Acme Corp - CEO/VP" class="w-full">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Challenge Summary</label>
+                                <textarea id="message" rows="3" placeholder="Tell us about your sales goals..." class="w-full"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition shadow-lg transform active:scale-[0.98]">
+                                Submit for Review
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Shadow at end of section -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/90 border-t border-slate-700 py-12">
+        <div class="container mx-auto px-6 text-center">
+             <a href="#hero" class="flex justify-center items-center space-x-2 text-xl font-bold tracking-wider mb-6">
+                <!-- Text Logo for dark footer -->
+                <i class="fa-solid fa-bolt text-amber-400"></i>
+                <span class="text-white">CHARGED</span><span class="text-amber-400">CONSULTING</span>
+            </a>
+            <p class="text-slate-500 mb-6">&copy; 2025 Charged Consulting. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 text-sm font-medium text-slate-500">
+                <a href="#" class="hover:text-amber-400 transition">Privacy Policy</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="hover:text-amber-400 transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // 1. Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            disable: 'mobile', 
+        });
+
+        // 2. Initialize Swiper for Hero Section
+        document.addEventListener('DOMContentLoaded', () => {
+             const swiper = new Swiper('.swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000, // Change slide every 5 seconds
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                speed: 1000,
+            });
+
+            initNumberAnimation();
+        });
+
+        // 3. Animated Number Counter Logic
+        function animateValue(obj, start, end, duration, suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                
+                // Format for currency/numbers
+                let value = start + Math.floor(progress * (end - start));
+                
+                if (suffix === 'M+') {
+                    obj.textContent = '$' + value + 'M+';
+                } else if (suffix === 'm') {
+                    obj.textContent = value + 'm';
+                } else if (suffix === '+') {
+                    obj.textContent = value + '+';
+                } else {
+                    obj.textContent = value + suffix;
+                }
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function initNumberAnimation() {
+            const counters = document.querySelectorAll('.count-up');
+            
+            // Intersection Observer to trigger animation when visible
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = parseInt(target.getAttribute('data-target'));
+                        const suffix = target.getAttribute('data-suffix') || '';
+                        
+                        // Start the animation
+                        animateValue(target, 0, finalValue, 2000, suffix);
+                        
+                        // Stop observing after animation starts
+                        observer.unobserve(target);
+                    }
+                });
+            }, {
+                threshold: 0.5 // Trigger when 50% of the element is visible
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+        
+        // 4. Custom Alert/Message Box (Replacing `alert()`)
+        function alertMessage(msg, type) {
+            const container = document.createElement('div');
+            container.className = `fixed bottom-5 right-5 p-4 rounded-xl shadow-2xl z-[1000] text-white transition-all duration-500 transform translate-y-full opacity-0 ${type === 'success' ? 'bg-green-600' : 'bg-red-600'}`;
+            container.textContent = msg;
+            document.body.appendChild(container);
+
+            // Animate in
+            setTimeout(() => {
+                container.classList.remove('translate-y-full', 'opacity-0');
+                container.classList.add('translate-y-0', 'opacity-100');
+            }, 50);
+
+            // Animate out and remove
+            setTimeout(() => {
+                container.classList.remove('translate-y-0', 'opacity-100');
+                container.classList.add('translate-y-full', 'opacity-0');
+                container.addEventListener('transitionend', () => container.remove());
+            }, 4000);
+        }
+
+    </script>
+
+</body>
+</html>
