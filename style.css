@@ -29,6 +29,11 @@ main {
   padding: 1.5rem 0;
   border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
+  box-shadow: 25px 25px 50px -12px rgba(0, 0, 0, 0.836);
+}
+
+#mobile-menu-button {
+  color: #334155;
 }
 
 .text-gradient {

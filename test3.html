@@ -3,471 +3,889 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SalesAdvisors - Strategic Growth</title>
+    <title>CHARGED CONSULTING</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="data:image/png" />
+    <meta
+      name="description"
+      content="CHARGED CONSULTING: Strategic Sales Advisory focused on transforming revenue models for Private Equity and Mid-Market enterprises. Achieve non-linear growth with our data-driven frameworks."
+    />
+    <meta
+      name="keywords"
+      content="Sales Advisory, Revenue Operations, RevOps, Sales Strategy, Private Equity Consulting, Sales Transformation, B2B Sales, Charged Consulting"
+    />
+    <meta name="author" content="CHARGED CONSULTING" />
+    <meta name="robots" content="index, follow" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <style>
-      /* --- COLOR PALETTE: DARK TEAL & ELECTRIC LIME --- */
+      /* --- NEW COLOR PALETTE: NAVY BLUE & AMBER (High Trust/Charge) --- */
       :root {
-        --color-primary: #b6f100; /* Electric Lime */
-        --color-dark: #081628; /* Deep Navy/Teal */
-        --color-secondary-dark: #102235; /* Dark Teal Card Background */
-        --color-light-background: #f3f4f6; /* Gray-100 for the lighter banner */
+        --color-primary: #fbbf24; /* Amber-400 */
+        --color-dark: #0f172a; /* Slate-900 (Deep Navy) */
+        --color-secondary-dark: #1e293b; /* Slate-800 */
+        --color-accent-blue: #2563eb; /* Blue-600 */
       }
       body {
         font-family: "Inter", sans-serif;
-        background-color: var(--color-dark);
-        color: #e2e8f0;
-        /* Subtle texture for depth */
-        background-image: radial-gradient(
-          circle at 1px 1px,
-          #102235 1px,
-          transparent 0
-        );
-        background-size: 30px 30px;
+        background-color: #f8fafc; /* Light Gray background for contrast */
+        color: #334155; /* Slate-700 for default text */
       }
       .text-gradient {
-        /* NEW: Lime/Green Gradient */
-        background-image: linear-gradient(to right, #84cc16, #b6f100);
+        /* Amber gradient for Charged feel */
+        background-image: linear-gradient(to right, #f59e0b, #fbbf24);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      /* Page container structure for JS-based routing */
-      .section-container {
-        min-height: calc(100vh - 80px);
-        padding-top: 100px;
-        padding-bottom: 80px;
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-      .active-page {
-        display: block;
-        opacity: 1;
+      .btn-charged {
+        @apply px-5 py-2.5 rounded-full font-bold text-sm transition duration-300 transform hover:scale-[1.05] shadow-lg;
       }
       .card-icon-container {
-        /* UPDATED: Solid Lime Background for Max Contrast */
-        @apply w-16 h-16 bg-lime-500 rounded-xl flex items-center justify-center mb-4 shadow-xl;
+        @apply w-12 h-12 rounded-lg flex items-center justify-center mb-4 shadow-md;
       }
-      /* Custom styles for high-contrast inputs */
+      /* Custom input styling for light sections */
       input[type="text"],
       input[type="email"],
       textarea {
-        /* UPDATED: Use secondary dark background and lime focus ring */
-        @apply bg-slate-900 border border-slate-700 text-white rounded-xl p-4 focus:ring-lime-400 focus:border-lime-400 transition duration-300;
+        @apply bg-white border border-slate-300 text-slate-900 rounded-lg p-3 focus:ring-amber-500 focus:border-amber-500 transition duration-300;
       }
       .stat-item {
-        @apply border-b md:border-b-0 md:border-r border-slate-700 p-6 last:border-r-0 last:border-b-0;
+        @apply p-6 border-b border-r border-slate-200 last:border-r-0 last:border-b-0;
       }
-      .logo-placeholder {
-        @apply h-10 w-28 md:w-36 flex items-center justify-center bg-slate-800/50 rounded-lg text-xs font-semibold text-gray-400 border border-slate-700 transition duration-300 hover:scale-[1.05];
-      }
-      
-      /* NEW: Primary button style for reuse (LIME) */
-      .btn-primary {
-          @apply px-10 py-4 bg-lime-500 text-slate-900 rounded-xl font-bold text-lg shadow-2xl hover:bg-lime-400 transition duration-300 transform hover:scale-[1.02];
-      }
-      /* NEW: Secondary/Outline button style (LIME) */
-      .btn-secondary {
-          @apply px-6 py-3 border border-lime-500 text-lime-400 rounded-xl font-semibold hover:bg-lime-500/10 transition duration-300 transform hover:scale-[1.02];
-      }
-
-      /* --- SWIPER / CAROUSEL STYLES --- */
-      .swiper-container {
-        overflow: hidden;
-        position: relative;
+      /* Hero Slide Images for consistent look */
+      .hero-slide-image {
         border-radius: 1.5rem; /* rounded-3xl */
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-        height: 550px; /* Fixed height for the hero image area */
-      }
-      .swiper-wrapper {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: max-content;
-        height: 100%;
-      }
-      .swiper-slide {
-        width: 100%;
-        flex-shrink: 0;
-        position: relative;
-      }
-      .slide-content {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-      }
-      .slide-content img {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
-      }
-      .swiper-dots {
-        position: absolute;
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 0.5rem;
-        z-index: 10;
-      }
-      .swiper-dot {
-        width: 10px;
-        height: 10px;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
-        transition: all 0.3s;
-        cursor: pointer;
-      }
-      .swiper-dot.active {
-        background: var(--color-primary);
-        width: 20px;
-        border-radius: 9999px;
       }
     </style>
   </head>
-  <body class="antialiased">
+
+  <body class="antialiased scroll-to-section">
     <header
-      class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md shadow-xl border-b border-lime-500/30"
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-amber-500/10"
     >
       <nav
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <a href="#home" class="text-2xl font-extrabold tracking-wider">
-          <span class="text-lime-400">SALES</span
-          ><span class="text-white">ADVISORS</span>
+        <a
+          href="#hero"
+          class="text-2xl font-extrabold tracking-wider flex items-center space-x-2"
+        >
+          <i class="fa-solid fa-bolt text-amber-500"></i>
+          <span class="text-slate-900">CHARGED</span
+          ><span class="text-amber-500">CONSULTING</span>
         </a>
-        <div class="hidden md:flex space-x-8 text-sm font-medium">
+
+        <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
           <a
-            href="#home"
-            class="nav-link hover:text-lime-400 transition"
-            data-page="home"
+            href="#hero"
+            class="nav-link text-slate-600 hover:text-amber-500 transition"
             >Home</a
           >
           <a
             href="#about"
-            class="nav-link hover:text-lime-400 transition"
-            data-page="about"
+            class="nav-link text-slate-600 hover:text-amber-500 transition"
             >About Us</a
           >
           <a
-            href="#booking"
-            class="nav-link btn-secondary px-4 py-2"
-            data-page="booking"
+            href="#impact"
+            class="nav-link text-slate-600 hover:text-amber-500 transition"
+            >Impact</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-slate-600 hover:text-amber-500 transition"
+            >Contact</a
+          >
+          <a
+            href="#booking-links"
+            class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400"
             >Book a Call</a
           >
         </div>
+
         <button
           id="mobile-menu-button"
-          class="md:hidden text-white focus:outline-none"
+          class="md:hidden text-slate-900 focus:outline-none"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
           <i class="fas fa-bars text-xl"></i>
         </button>
       </nav>
+
       <div
         id="mobile-menu"
-        class="hidden md:hidden px-6 pb-4 space-y-2 bg-slate-950/95"
+        class="hidden md:hidden px-6 pb-4 space-y-2 bg-slate-100"
       >
         <a
-          href="#home"
-          class="nav-link block py-3 hover:text-lime-400 transition border-b border-slate-800"
-          data-page="home"
+          href="#hero"
+          class="nav-link block py-3 text-slate-700 hover:text-amber-500 transition border-b border-slate-200"
           >Home</a
         >
         <a
           href="#about"
-          class="nav-link block py-3 hover:text-lime-400 transition border-b border-slate-800"
-          data-page="about"
+          class="nav-link block py-3 text-slate-700 hover:text-amber-500 transition border-b border-slate-200"
           >About Us</a
         >
         <a
-          href="#booking"
-          class="nav-link block py-3 text-lime-400 font-semibold"
-          data-page="booking"
+          href="#impact"
+          class="nav-link block py-3 text-slate-700 hover:text-amber-500 transition border-b border-slate-200"
+          >Impact</a
+        >
+        <a
+          href="#contact"
+          class="nav-link block py-3 text-slate-700 hover:text-amber-500 transition border-b border-slate-200"
+          >Contact</a
+        >
+        <a
+          href="#booking-links"
+          class="nav-link block py-3 text-amber-500 font-semibold"
           >Book a Call</a
         >
       </div>
     </header>
 
-    <main class="container mx-auto px-6">
-      <div id="home" class="section-container active-page">
-        <section
-          class="pt-12 md:pt-20 pb-24 grid md:grid-cols-2 gap-12 items-center"
+    <main>
+      <section
+        id="hero"
+        class="pt-20 pb-32 overflow-hidden bg-white shadow-2xl shadow-slate-300"
+        data-aos="fade-up"
+      >
+        <div
+          class="container pt-10 mx-auto px-6 relative z-10 min-h-[600px] bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
         >
-          <div data-aos="fade-right">
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-              Build & <span class="text-gradient">growth</span> with scalable
-              tools
-            </h1>
-            <p class="text-xl text-gray-300 mb-8">
-              Easily adapt to changes and scale your operations with our
-              flexible infrastructure, designed to support your business growth.
-            </p>
-            <div class="flex items-center space-x-6">
-              <a href="#contact-form" class="btn-primary flex items-center space-x-2">
-                <span>Get Started</span> <i class="fas fa-arrow-right"></i>
-              </a>
-              <a href="#booking" class="btn-secondary"> Free Trial </a>
-            </div>
-          </div>
+          <div class="swiper mt-10 h-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+                >
+                  <div
+                    class="hero-slide-content"
+                    data-aos="fade-right"
+                    data-aos-delay="200"
+                  >
+                    <h1
+                      class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 leading-tight"
+                    >
+                      Build & Growth with
+                      <span class="text-gradient">Scalable Tools</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8">
+                      Easily adapt to changes and scale your operations with our
+                      flexible infrastructure, designed to support your business
+                      growth.
+                    </p>
 
-          <div
-            class="w-full md:block swiper-container shadow-2xl"
-            data-aos="fade-left"
-          >
-            <div class="swiper-wrapper" id="hero-swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="https://placehold.co/1000x800/293b4e/b6f100?text=Strategy+Session+%7C+RevOps+Blueprint"
-                  alt="A business team analyzing data"
-                />
+                    <div class="flex mt-5 space-x-3">
+                      <a
+                        href="#contact"
+                        class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400"
+                        >Get Started</a
+                      >
+                      <a
+                        href="#booking-links"
+                        class="btn-charged bg-slate-200 text-slate-900 hover:bg-slate-100"
+                        >Free trial</a
+                      >
+                    </div>
+
+                    <div
+                      class="flex items-center space-x-3 text-sm text-slate-500 mt-8"
+                    >
+                      <div class="flex -space-x-2">
+                        <img
+                          class="inline-block h-8 w-8 rounded-full ring-2 ring-slate-50"
+                          src="https://placehold.co/50x50/334155/fff?text=T1"
+                          alt="Testimonial Avatar"
+                        />
+                        <img
+                          class="inline-block h-8 w-8 rounded-full ring-2 ring-slate-50"
+                          src="https://placehold.co/50x50/475569/fff?text=T2"
+                          alt="Testimonial Avatar"
+                        />
+                        <img
+                          class="inline-block h-8 w-8 rounded-full ring-2 ring-slate-50"
+                          src="https://placehold.co/50x50/64748b/fff?text=T3"
+                          alt="Testimonial Avatar"
+                        />
+                      </div>
+                      <span>10.000+ people already joined the Advisory</span>
+                    </div>
+                  </div>
+                  <div
+                    class="lg:flex justify-center"
+                    data-aos="fade-left"
+                    data-aos-delay="300"
+                  >
+                    <div
+                      class="relative bg-slate-200 h-full w-full rounded-3xl p-4 shadow-xl"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Consulting Team"
+                        class="hero-slide-image w-full h-full shadow-2xl"
+                      />
+                      <div
+                        class="absolute top-1/4 right-4 p-2 bg-white rounded-full shadow-lg text-xs text-slate-700 font-semibold flex items-center space-x-1"
+                      >
+                        <i class="fas fa-plus text-amber-500"></i>
+                        <span>Real-time analytics</span>
+                      </div>
+                      <div
+                        class="absolute bottom-1/4 left-4 p-2 bg-white rounded-full shadow-lg text-xs text-slate-700 font-semibold flex items-center space-x-1"
+                      >
+                        <i class="fas fa-plus text-amber-500"></i>
+                        <span>Digital Transformation</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
               <div class="swiper-slide">
-                <img
-                  src="https://placehold.co/1000x800/102235/b6f100?text=PE+Consultation+%7C+Value+Creation"
-                  alt="A consultant presenting a growth chart"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="https://placehold.co/1000x800/374151/b6f100?text=Implementation+%7C+Talent+Matrix"
-                  alt="Sales team members collaborating"
-                />
+                <div
+                  class="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto"
+                >
+                  <div class="hero-slide-content">
+                    <h1
+                      class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight"
+                    >
+                      Accelerate Success with
+                      <span class="text-gradient">Elite Advisory</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8">
+                      Access former Fortune 500 sales leaders and operating
+                      partners dedicated solely to optimizing your revenue
+                      model.
+                    </p>
+
+                    <div class="flex mt-4 space-x-3">
+                      <a
+                        href="#contact"
+                        class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400"
+                        >Meet Our Experts</a
+                      >
+                      <a
+                        href="#booking-links"
+                        class="btn-charged bg-slate-200 text-slate-900 hover:bg-slate-100"
+                        >Strategy Session</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="lg:flex justify-center">
+                    <div
+                      class="relative bg-slate-200 w-full h-full rounded-3xl p-4 shadow-xl"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Strategy Session"
+                        class="hero-slide-image w-full h-full shadow-2xl"
+                      />
+                      <div
+                        class="absolute bottom-4 left-4 p-3 bg-white rounded-full shadow-lg text-sm text-slate-700 font-semibold"
+                      >
+                        Pipeline Mastery +
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="swiper-dots" id="swiper-dots"></div>
+
+            <div class="swiper-pagination hidden"></div>
           </div>
-        </section>
-        
-        <section class="py-16 md:py-20">
-          <div
-            class="bg-[--color-secondary-dark] p-8 md:p-12 rounded-2xl shadow-2xl border-l-8 border-lime-500 flex flex-col md:flex-row items-center justify-between"
-            data-aos="fade-up"
-            data-aos-delay="50"
-          >
-            <div class="text-center md:text-left mb-6 md:mb-0">
-              <p class="text-sm uppercase tracking-widest text-lime-400 mb-2 font-semibold">
-                LIMITED TIME OFFER:
-              </p>
-              <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-snug">
-                Get 3 Months FREE on Enterprise Plan!
+        </div>
+      </section>
+
+      <section
+        id="marketing-banner"
+        class="relative py-16 bg-white"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <div class="banner-below-hero" data-aos="fade-up">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div
+                class="relative rounded-3xl overflow-hidden shadow-2xl"
+                data-aos="fade-right"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=cover"
+                  alt="Business people collaborating"
+                  class="w-full h-auto object-cover"
+                  onerror="this.onerror=null;this.src='https://placehold.co/800x400/475569/94a3b8?text=Team+Collaboration';"
+                />
+                <div
+                  class="absolute inset-0 bg-slate-900/40 p-8 flex flex-col justify-end"
+                >
+                  <h3 class="text-3xl font-extrabold text-white mb-2">
+                    Build & Growth with Scalable Tools
+                  </h3>
+                  <p class="text-slate-200 text-sm">
+                    Founded by data experts, design platforms tailored for
+                    business growth.
+                  </p>
+                  <div class="flex mt-4 space-x-3">
+                    <a
+                      href="#contact"
+                      class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400"
+                      >Get Started</a
+                    >
+                    <a
+                      href="#booking-links"
+                      class="btn-charged bg-white text-slate-900 hover:bg-slate-100"
+                      >Free trial</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+                <h2
+                  class="col-span-2 text-4xl font-extrabold text-slate-900 mb-2 leading-tight"
+                >
+                  Our Strategic Framework
+                </h2>
+                <div
+                  class="p-6 bg-white rounded-2xl shadow-lg border border-slate-200 text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <i class="fas fa-cubes text-3xl text-amber-500 mb-3"></i>
+                  <p class="text-xl font-bold text-slate-900">35% Avg. Lift</p>
+                  <p class="text-sm text-slate-500">
+                    In customer satisfaction rate.
+                  </p>
+                </div>
+                <div
+                  class="p-6 bg-white rounded-2xl shadow-lg border border-slate-200 text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                >
+                  <i class="fas fa-chart-area text-3xl text-amber-500 mb-3"></i>
+                  <p class="text-xl font-bold text-slate-900">
+                    5x Time-to-Value
+                  </p>
+                  <p class="text-sm text-slate-500">
+                    Users run advanced financial solutions.
+                  </p>
+                </div>
+                <div
+                  class="p-6 bg-white rounded-2xl shadow-lg border border-slate-200 text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="300"
+                >
+                  <i class="fas fa-microchip text-3xl text-amber-500 mb-3"></i>
+                  <p class="text-xl font-bold text-slate-900">AI-Powered</p>
+                  <p class="text-sm text-slate-500">
+                    Pinpointing pipeline friction points.
+                  </p>
+                </div>
+                <div
+                  class="p-6 bg-white rounded-2xl shadow-lg border border-slate-200 text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="400"
+                >
+                  <i class="fas fa-sitemap text-3xl text-amber-500 mb-3"></i>
+                  <p class="text-xl font-bold text-slate-900">RevOps Model</p>
+                  <p class="text-sm text-slate-500">
+                    Unified revenue operations structure.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="discovery"
+        class="relative py-24 bg-white"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <div class="new-banner-container">
+            <div class="text-center mb-12">
+              <h2 class="text-4xl font-extrabold text-slate-900 mb-4">
+                Discover our journey and what drives us
               </h2>
+              <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                Founded by data experts, we create cutting-edge SaaS analytics
+                platforms tailored for businesses of all sizes.
+              </p>
             </div>
-            <a
-              href="#booking"
-              class="px-8 py-4 bg-lime-500 text-slate-900 rounded-xl font-bold hover:bg-lime-400 transition duration-300 transform hover:scale-[1.05]"
-            >
-              CLAIM NOW
-            </a>
-          </div>
-        </section>
-        
-        <section class="py-20 border-t border-slate-800">
-          <h2
-            class="text-3xl font-bold mb-12 text-center text-white"
-            data-aos="fade-up"
-          >
-            Trusted by Industry Leaders
-          </h2>
 
-          <div
-            class="flex flex-wrap justify-center items-center gap-6 md:gap-12 mb-12 max-w-5xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="logo-placeholder">GLOBAL CORP</div>
-            <div class="logo-placeholder">FINTEC GROUP</div>
-            <div class="logo-placeholder">MED-TECH P.E.</div>
-            <div class="logo-placeholder">ENTERPRISE Z</div>
-            <div class="logo-placeholder">ACME LTD</div>
-            <div class="logo-placeholder">GROWTH INC</div>
-          </div>
+            <div class="mb-12">
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-xl"
+                data-aos="zoom-in"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop"
+                  alt="Team working on data"
+                  class="w-full h-auto object-cover max-h-96"
+                  onerror="this.onerror=null;this.src='https://placehold.co/1200x400/475569/94a3b8?text=CHARGED+CONSULTING+VIDEO+PREVIEW';"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center bg-black/30"
+                >
+                  <i
+                    class="fas fa-play-circle text-white text-6xl opacity-90 hover:opacity-100 cursor-pointer transition duration-300"
+                  ></i>
+                </div>
+              </div>
+            </div>
 
-          <div
-            class="bg-[--color-secondary-dark] p-8 md:p-12 rounded-2xl max-w-4xl mx-auto shadow-2xl border-l-8 border-lime-500"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <i class="fas fa-quote-left text-lime-400 text-3xl mb-4"></i>
-            <p class="text-xl italic text-gray-300 mb-4">
-              "SalesAdvisors wasn't just consulting—they were embedded
-              operators. They drove a 40% uplift in our pipeline conversion rate
-              within six months, directly leading to a successful secondary
-              fundraising round."
-            </p>
-            <p class="font-bold text-white">- CEO, Mid-Market Software Company</p>
-            <p class="text-sm text-gray-400">Client since 2023</p>
-          </div>
-        </section>
-
-        <section class="py-20 border-t border-slate-800">
-          <h2
-            class="text-3xl font-bold mb-12 text-center text-white"
-            data-aos="fade-up"
-          >
-            Who We Serve
-          </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div
-              class="bg-[--color-secondary-dark] p-8 rounded-2xl shadow-xl border-b-4 border-lime-500/50 hover:bg-slate-700/70 transition duration-300"
-              data-aos="zoom-in"
+              class="grid md:grid-cols-4 gap-6 text-center border-t border-slate-200 pt-6"
+              id="discovery-stats"
+            >
+              <div data-aos="fade-up" data-aos-delay="100">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span class="count-up" data-target="95" data-suffix="%"
+                    >95%</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Customer satisfaction rate, reflecting our dedication
+                </p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="200">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span
+                    class="count-up"
+                    data-target="10"
+                    data-suffix="+"
+                    data-prefix="10"
+                    >10+</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Innovation and Insight to users' financial journeys
+                </p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="300">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span
+                    class="count-up"
+                    data-target="10"
+                    data-suffix="m"
+                    data-prefix="$"
+                    >$10m</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Platform has ensuring secure and efficient financial
+                </p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="400">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span class="count-up" data-target="50" data-suffix="m"
+                    >50m</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Users worldwide, providing them with financial solutions
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-16 text-center"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <h3
+              class="text-3xl font-extrabold text-slate-900 max-w-4xl mx-auto leading-normal"
+            >
+              We are passionate about empowering individuals and businesses to
+              take control of their finances
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="what-we-do"
+        class="relative py-24 bg-slate-50"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <div
+            class="grid lg:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100"
+          >
+            <div class="webflow-sticky-headline" data-aos="fade-right">
+              <p class="text-sm uppercase tracking-widest text-amber-500 mb-2">
+                Our Value Proposition
+              </p>
+              <h2
+                class="text-5xl font-extrabold text-slate-900 mb-6 leading-tight"
+              >
+                Sales Advisory is
+                <span class="text-gradient">Embedded Growth</span>.
+              </h2>
+              <p class="text-lg text-slate-700">
+                We don't just recommend changes; we integrate into your core,
+                acting as fractional sales leadership to implement systemic,
+                measurable, and repeatable revenue generation strategies.
+              </p>
+              <div class="mt-8">
+                <a
+                  href="#methodology"
+                  class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400 inline-block text-base min-w-0"
+                  >See Our Framework</a
+                >
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+              <h2
+                class="col-span-2 text-3xl font-extrabold text-slate-900 mb-2 leading-tight"
+              >
+                Key Deliverables
+              </h2>
+              <div
+                class="p-4 bg-slate-50 rounded-xl shadow-md border border-slate-200"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                <i class="fas fa-link text-xl text-amber-500 mb-2"></i>
+                <p class="text-sm font-bold text-slate-900">
+                  Custom Go-to-Market Strategy
+                </p>
+              </div>
+              <div
+                class="p-4 bg-slate-50 rounded-xl shadow-md border border-slate-200"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <i class="fas fa-book-open text-xl text-amber-500 mb-2"></i>
+                <p class="text-sm font-bold text-slate-900">
+                  Detailed Sales Playbooks & Training
+                </p>
+              </div>
+
+              <div
+                class="p-4 bg-slate-50 rounded-xl shadow-md border border-slate-200"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                <i
+                  class="fas fa-money-check-alt text-xl text-amber-500 mb-2"
+                ></i>
+                <p class="text-sm font-bold text-slate-900">
+                  Compensation & Incentive Modeling
+                </p>
+              </div>
+
+              <div
+                class="p-4 bg-slate-50 rounded-xl shadow-md border border-slate-200"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
+                <i class="fas fa-search-plus text-xl text-amber-500 mb-2"></i>
+                <p class="text-sm font-bold text-slate-900">
+                  CRM Audit and Optimization
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-10 border-y border-slate-200 bg-white"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <p
+            class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8"
+          >
+            Trusted by Top Accelerators
+          </p>
+          <div
+            class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500"
+          >
+            <div
+              class="text-3xl text-slate-400"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <i class="fab fa-aws"></i>
+            </div>
+            <div
+              class="text-3xl text-slate-400"
+              data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="card-icon-container">
-                <i class="fas fa-handshake text-slate-900 text-2xl"></i>
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-white">
-                Private Equity Portfolios
-              </h3>
-              <p class="text-gray-400 text-sm">
-                Accelerating multiples by implementing scalable sales engines
-                for portfolio companies pre-exit.
-              </p>
+              <i class="fab fa-google"></i>
             </div>
-
             <div
-              class="bg-[--color-secondary-dark] p-8 rounded-2xl shadow-xl border-b-4 border-lime-500/50 hover:bg-slate-700/70 transition duration-300"
-              data-aos="zoom-in"
+              class="text-3xl text-slate-400"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <i class="fab fa-airbnb"></i>
+            </div>
+            <div
+              class="text-3xl text-slate-400"
+              data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div class="card-icon-container">
-                <i class="fas fa-building text-slate-900 text-2xl"></i>
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-white">
-                Mid-Market Enterprise
-              </h3>
-              <p class="text-gray-400 text-sm">
-                Driving consistent, scalable growth models and operational
-                efficiency for established market leaders.
-              </p>
+              <i class="fab fa-stripe"></i>
             </div>
-
             <div
-              class="bg-[--color-secondary-dark] p-8 rounded-2xl shadow-xl border-b-4 border-lime-500/50 hover:bg-slate-700/70 transition duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="300"
+              class="text-3xl text-slate-400"
+              data-aos="fade-up"
+              data-aos-delay="250"
             >
-              <div class="card-icon-container">
-                <i class="fas fa-rocket text-slate-900 text-2xl"></i>
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-white">
-                Hyper-Growth Startups
-              </h3>
-              <p class="text-gray-400 text-sm">
-                Structuring sales teams, systems, and processes to handle rapid,
-                exponential market expansion.
-              </p>
-            </div>
-
-            <div
-              class="bg-[--color-secondary-dark] p-8 rounded-2xl shadow-xl border-b-4 border-lime-500/50 hover:bg-slate-700/70 transition duration-300"
-              data-aos="zoom-in"
-              data-aos-delay="400"
-            >
-              <div class="card-icon-container">
-                <i class="fas fa-sitemap text-slate-900 text-2xl"></i>
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-white">
-                Sales Transformation
-              </h3>
-              <p class="text-gray-400 text-sm">
-                Complete overhaul of GTM strategies, technology stack, and
-                talent assessment for sustained results.
-              </p>
+              <i class="fab fa-uber"></i>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="py-16 md:py-20 bg-gray-100 mt-20" data-aos="fade-up">
-            <div class="container mx-auto px-6 text-slate-900 flex flex-col md:flex-row items-center justify-between">
-                <div class="text-center md:text-left mb-6 md:mb-0 max-w-2xl">
-                    <h2 class="text-3xl font-bold">
-                        Download our <span class="text-lime-500">2025 Industry Report</span>
-                    </h2>
-                    <p class="text-lg text-gray-600 mt-2">
-                        Get the deep-dive analysis on verified non-linear revenue growth strategies.
-                    </p>
-                </div>
-                <a
-                    href="#"
-                    class="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-700 transition duration-300 shadow-lg flex items-center space-x-2"
-                >
-                    <span>GET THE REPORT</span> <i class="fas fa-download"></i>
-                </a>
+      <section
+        id="impact"
+        class="relative py-20 bg-slate-50"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <h2 class="text-4xl font-bold text-slate-900 mb-6">
+                Global <span class="text-gradient">Impact Results</span>
+              </h2>
+              <p class="text-lg text-slate-600 mb-6">
+                We deliver measurable ROI across continents. Our strategies are
+                backed by rigorous data analysis and proven frameworks that
+                deliver predictable results.
+              </p>
+              <a
+                href="#contact"
+                class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400 inline-block min-w-0"
+                >Calculate Your ROI</a
+              >
             </div>
-        </section>
+            <div
+              class="bg-white rounded-2xl border border-slate-200 shadow-xl grid grid-cols-2 overflow-hidden"
+              data-aos="zoom-in"
+              data-section="impact"
+            >
+              <div class="stat-item text-center">
+                <p class="text-4xl font-extrabold text-amber-500 mb-2">
+                  <span class="count-up" data-target="500" data-suffix="M+"
+                    >$</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500 font-medium">
+                  Revenue Generated
+                </p>
+              </div>
+              <div class="stat-item text-center">
+                <p class="text-4xl font-extrabold text-amber-500 mb-2">
+                  <span
+                    class="count-up"
+                    data-target="300"
+                    data-suffix="+"
+                  ></span>
+                </p>
+                <p class="text-sm text-slate-500 font-medium">
+                  Companies Scaled
+                </p>
+              </div>
+              <div class="stat-item text-center">
+                <p class="text-4xl font-extrabold text-amber-500 mb-2">
+                  <span
+                    class="count-up"
+                    data-target="35"
+                    data-suffix="%"
+                  ></span>
+                </p>
+                <p class="text-sm text-slate-500 font-medium">
+                  Avg. Conversion Lift
+                </p>
+              </div>
+              <div class="stat-item text-center">
+                <p class="text-4xl font-extrabold text-amber-500 mb-2">
+                  <span
+                    class="count-up"
+                    data-target="10"
+                    data-suffix="x"
+                  ></span>
+                </p>
+                <p class="text-sm text-slate-500 font-medium">ROI Year One</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="py-20 border-t border-slate-800">
-          <h2
-            class="text-3xl font-bold mb-12 text-center text-white"
-            data-aos="fade-up"
-          >
-            Verifiable Impact, Defined Outcomes
-          </h2>
+      <section
+        id="discovery"
+        class="relative py-24 bg-white"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <div class="new-banner-container">
+            <div class="text-center mb-12">
+              <h2 class="text-4xl font-extrabold text-slate-900 mb-4">
+                Discover our journey and what drives us
+              </h2>
+              <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                Founded by data experts, we create cutting-edge SaaS analytics
+                platforms tailored for businesses of all sizes.
+              </p>
+            </div>
+
+            <div class="mb-12">
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-xl"
+                data-aos="zoom-in"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop"
+                  alt="Team working on data"
+                  class="w-full h-auto object-cover max-h-96"
+                  onerror="this.onerror=null;this.src='https://placehold.co/1200x400/475569/94a3b8?text=CHARGED+CONSULTING+VIDEO+PREVIEW';"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center bg-black/30"
+                >
+                  <i
+                    class="fas fa-play-circle text-white text-6xl opacity-90 hover:opacity-100 cursor-pointer transition duration-300"
+                  ></i>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="grid md:grid-cols-4 gap-6 text-center border-t border-slate-200 pt-6"
+              id="discovery-stats"
+            >
+              <div data-aos="fade-up" data-aos-delay="100">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span class="count-up" data-target="95" data-suffix="%"
+                    >95%</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Customer satisfaction rate, reflecting our dedication
+                </p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="200">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span
+                    class="count-up"
+                    data-target="10"
+                    data-suffix="+"
+                    data-prefix="10"
+                    >10+</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Innovation and Insight to users' financial journeys
+                </p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="300">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span
+                    class="count-up"
+                    data-target="10"
+                    data-suffix="m"
+                    data-prefix="$"
+                    >$10m</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Platform has ensuring secure and efficient financial
+                </p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="400">
+                <p class="text-3xl font-extrabold text-slate-900 mb-1">
+                  <span class="count-up" data-target="50" data-suffix="m"
+                    >50m</span
+                  >
+                </p>
+                <p class="text-sm text-slate-500">
+                  Users worldwide, providing them with financial solutions
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div
-            class="grid md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-700 rounded-2xl bg-[--color-secondary-dark] p-4 md:p-0 shadow-2xl"
+            class="mt-16 text-center"
             data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos-delay="500"
           >
-            <div class="stat-item text-center">
-              <p class="text-5xl font-extrabold text-lime-400 mb-2">300+</p>
-              <p class="text-gray-300 font-semibold text-lg">
-                Engagements Completed
-              </p>
-              <p class="text-sm text-gray-500">Across 15+ industries</p>
-            </div>
-            <div class="stat-item text-center">
-              <p class="text-5xl font-extrabold text-lime-400 mb-2">115%</p>
-              <p class="text-gray-300 font-semibold text-lg">
-                Avg. EBITDA Lift
-              </p>
-              <p class="text-sm text-gray-500">Observed in portfolio clients</p>
-            </div>
-            <div class="stat-item text-center">
-              <p class="text-5xl font-extrabold text-lime-400 mb-2">5x</p>
-              <p class="text-gray-300 font-semibold text-lg">Time-to-Value</p>
-              <p class="text-sm text-gray-500">Faster than industry average</p>
-            </div>
-            <div class="stat-item text-center">
-              <p class="text-5xl font-extrabold text-lime-400 mb-2">98%</p>
-              <p class="text-gray-300 font-semibold text-lg">
-                Client Retention
-              </p>
-              <p class="text-sm text-gray-500">
-                Based on follow-on engagements
-              </p>
-            </div>
+            <h3
+              class="text-3xl font-extrabold text-slate-900 max-w-4xl mx-auto leading-normal"
+            >
+              We are passionate about empowering individuals and businesses to
+              take control of their finances
+            </h3>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="py-20 border-t border-slate-800">
+      <section class="relative py-16 bg-slate-900" data-aos="fade-up">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
+            <span class="text-amber-400">STOP</span> Leaving Revenue on the
+            Table.
+          </h2>
+          <p class="text-lg text-slate-400 mb-8">
+            Take our quick diagnostic to identify the biggest bottleneck in your
+            current sales funnel.
+          </p>
+          <a
+            href="#contact"
+            class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400 inline-block min-w-0 text-base"
+          >
+            Take the Free Sales Assessment
+          </a>
+        </div>
+      </section>
+
+      <section
+        id="methodology"
+        class="relative py-24 bg-slate-800"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
           <h2
             class="text-3xl font-bold mb-12 text-center text-white"
             data-aos="fade-up"
           >
             Our Proprietary Methodology
           </h2>
-          <div class="grid md:grid-cols-3 gap-8">
+          <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div
-              class="bg-[--color-secondary-dark] p-8 rounded-2xl shadow-xl border-t-4 border-lime-500"
+              class="bg-slate-900 p-8 rounded-2xl shadow-xl border-t-4 border-amber-500"
               data-aos="fade-right"
               data-aos-delay="100"
             >
-              <i class="fas fa-microchip text-lime-400 text-3xl mb-4"></i>
+              <i class="fas fa-microchip text-amber-400 text-3xl mb-4"></i>
               <h3 class="text-xl font-semibold mb-3 text-white">
                 AI-Powered Forensics
               </h3>
@@ -478,11 +896,11 @@
             </div>
 
             <div
-              class="bg-[--color-secondary-dark] p-8 rounded-2xl shadow-xl border-t-4 border-lime-500"
+              class="bg-slate-900 p-8 rounded-2xl shadow-xl border-t-4 border-amber-500"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <i class="fas fa-sitemap text-lime-400 text-3xl mb-4"></i>
+              <i class="fas fa-sitemap text-amber-400 text-3xl mb-4"></i>
               <h3 class="text-xl font-semibold mb-3 text-white">
                 The RevOps Blueprint™
               </h3>
@@ -493,11 +911,11 @@
             </div>
 
             <div
-              class="bg-[--color-secondary-dark] p-8 rounded-2xl shadow-xl border-t-4 border-lime-500"
+              class="bg-slate-900 p-8 rounded-2xl shadow-xl border-t-4 border-amber-500"
               data-aos="fade-left"
               data-aos-delay="300"
             >
-              <i class="fas fa-brain text-lime-400 text-3xl mb-4"></i>
+              <i class="fas fa-brain text-amber-400 text-3xl mb-4"></i>
               <h3 class="text-xl font-semibold mb-3 text-white">
                 Talent Optimization Matrix
               </h3>
@@ -507,511 +925,354 @@
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="py-20 border-t border-slate-800">
-          <h2
-            class="text-3xl font-bold mb-12 text-center text-white"
-            data-aos="fade-up"
-          >
-            Our 5-Stage Transformation Process
-          </h2>
-          <div
-            class="bg-[--color-secondary-dark] p-8 rounded-3xl shadow-2xl"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-5 md:gap-6 text-center">
-                <div data-aos="zoom-in" data-aos-delay="200" class="flex flex-col items-center p-4 border-b border-slate-700 md:border-b-0">
-                    <span class="text-4xl font-extrabold text-lime-400">1</span>
-                    <h4 class="text-lg font-semibold mt-2">Discovery</h4>
-                    <p class="text-xs text-gray-400">Audit sales functions, tech, and talent.</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="300" class="flex flex-col items-center p-4 border-b border-slate-700 md:border-b-0">
-                    <span class="text-4xl font-extrabold text-lime-400">2</span>
-                    <h4 class="text-lg font-semibold mt-2">Strategy</h4>
-                    <p class="text-xs text-gray-400">Blueprint the optimized GTM model.</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="400" class="flex flex-col items-center p-4 border-b border-slate-700 md:border-b-0">
-                    <span class="text-4xl font-extrabold text-lime-400">3</span>
-                    <h4 class="text-lg font-semibold mt-2">Design</h4>
-                    <p class="text-xs text-gray-400">Build out new process, compensation, and systems.</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="500" class="flex flex-col items-center p-4 border-b border-slate-700 md:border-b-0">
-                    <span class="text-4xl font-extrabold text-lime-400">4</span>
-                    <h4 class="text-lg font-semibold mt-2">Launch</h4>
-                    <p class="text-xs text-gray-400">Pilot, train, and full operational rollout.</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="600" class="flex flex-col items-center p-4">
-                    <span class="text-4xl font-extrabold text-lime-400">5</span>
-                    <h4 class="text-lg font-semibold mt-2">Optimization</h4>
-                    <p class="text-xs text-gray-400">Continuous monitoring and performance coaching.</p>
-                </div>
-            </div>
+      <section class="relative py-16 bg-white" data-aos="fade-up">
+        <div
+          class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div class="text-center md:text-left mb-6 md:mb-0 md:w-1/2">
+            <h2
+              class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4"
+            >
+              READY TO <span class="text-amber-500">TRANSFORM</span> YOUR SALES?
+            </h2>
+            <a
+              href="#contact"
+              class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400 min-w-0 text-base"
+            >
+              BOOK A DISCOVERY CALL
+            </a>
+            <p class="text-xs text-slate-500 mt-4">
+              Connect with our team to start defining your growth.
+            </p>
           </div>
-        </section>
 
-        <section class="py-20 border-t border-slate-800">
+          <div class="md:w-1/2 flex justify-center">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&h=200&auto=format&fit=crop"
+              alt="Professional Consulting Team"
+              class="rounded-xl shadow-xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="relative py-24 bg-slate-50" data-aos="fade-up">
+        <div class="container mx-auto px-6">
           <h2
-            class="text-3xl font-bold mb-10 text-center text-white"
+            class="text-4xl font-bold text-slate-900 mb-12 text-center"
             data-aos="fade-up"
           >
-            Meet Your Advisors
+            Our Elite Team & Vision
           </h2>
-          <p
-            class="text-lg text-gray-400 mb-12 text-center max-w-3xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Our team brings decades of C-level experience from Private Equity
-            and Fortune 500 sales floors.
-          </p>
-          <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+
+          <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div
-              class="text-center p-6 bg-[--color-secondary-dark] rounded-xl shadow-lg"
+              class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1599566150163-479fc57d452f?q=80&w=150&h=150&auto=format&fit=crop"
+                alt="John Doe"
+                class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-amber-500/50 shadow-lg"
+              />
+              <h4 class="text-xl font-semibold text-slate-900">John Doe</h4>
+              <p class="text-amber-500 text-sm font-medium mb-2">
+                Chief Strategy Officer
+              </p>
+              <p class="text-slate-500 text-xs">
+                Ex-VP Sales, GlobalTech. 20+ years.
+              </p>
+            </div>
+            <div
+              class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <img
-                src="https://placehold.co/150x150/475569/fff?text=John+D."
-                alt="John Doe"
-                class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-lime-500/50"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&h=150&auto=format&fit=crop"
+                alt="Jane Smith"
+                class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-amber-500/50 shadow-lg"
               />
-              <h4 class="text-xl font-semibold text-white">John Doe</h4>
-              <p class="text-sm text-lime-400">Chief Strategy Officer</p>
-              <p class="text-xs text-gray-500 mt-2">
-                Former VP of Sales at GlobalTech.
+              <h4 class="text-xl font-semibold text-slate-900">Jane Smith</h4>
+              <p class="text-sm text-amber-500 font-medium mb-2">
+                Head of Operations
+              </p>
+              <p class="text-slate-500 text-xs">
+                Former PE Operating Partner in SaaS.
               </p>
             </div>
             <div
-              class="text-center p-6 bg-[--color-secondary-dark] rounded-xl shadow-lg"
+              class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100"
               data-aos="fade-up"
               data-aos-delay="300"
             >
               <img
-                src="https://placehold.co/150x150/475569/fff?text=Jane+S."
-                alt="Jane Smith"
-                class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-lime-500/50"
+                src="https://images.unsplash.com/photo-1544723795-3fb6469e779a?q=80&w=150&h=150&auto=format&fit=crop"
+                alt="Alex Peterson"
+                class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-amber-500/50 shadow-lg"
               />
-              <h4 class="text-xl font-semibold text-white">Jane Smith</h4>
-              <p class="text-sm text-lime-400">Head of Operations</p>
-              <p class="text-xs text-gray-500 mt-2">
-                PE Operating Partner specializing in Tech.
+              <h4 class="text-xl font-semibold text-slate-900">
+                Alex Peterson
+              </h4>
+              <p class="text-sm text-amber-500 font-medium mb-2">
+                Lead Consultant
+              </p>
+              <p class="text-slate-500 text-xs">
+                RevOps and CRM implementation expert.
               </p>
             </div>
             <div
-              class="text-center p-6 bg-[--color-secondary-dark] rounded-xl shadow-lg"
+              class="text-center p-6 bg-white rounded-xl shadow-lg border border-slate-100"
               data-aos="fade-up"
               data-aos-delay="400"
             >
               <img
-                src="https://placehold.co/150x150/475569/fff?text=Alex+P."
-                alt="Alex Peterson"
-                class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-lime-500/50"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29329?q=80&w=150&h=150&auto=format&fit=crop"
+                alt="Maria Rodriguez"
+                class="rounded-full w-32 h-32 mx-auto mb-4 object-cover border-4 border-amber-500/50 shadow-lg"
               />
-              <h4 class="text-xl font-semibold text-white">Alex Peterson</h4>
-              <p class="text-sm text-lime-400">Lead Consultant</p>
-              <p class="text-xs text-gray-500 mt-2">
-                Expert in CRM and RevOps implementation.
+              <h4 class="text-xl font-semibold text-slate-900">
+                Maria Rodriguez
+              </h4>
+              <p class="text-sm text-amber-500 font-medium mb-2">
+                Market Analyst
+              </p>
+              <p class="text-slate-500 text-xs">
+                M&A and financial modeling focus.
               </p>
             </div>
           </div>
-          <div
-            class="text-center mt-12"
-            data-aos="fade-up"
-            data-aos-delay="500"
+        </div>
+      </section>
+
+      <section class="relative py-16 bg-slate-900" data-aos="fade-up">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
+            Ready to launch your next growth phase?
+          </h2>
+          <a
+            href="#contact"
+            class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400 inline-block min-w-0 text-base"
           >
-            <a
-              href="#about"
-              class="inline-block text-lime-400 hover:text-lime-300 font-semibold transition"
-            >
-              View Full Team Bios <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-          </div>
-        </section>
+            Get Your Customized Plan
+          </a>
+        </div>
+      </section>
 
-        <section id="contact-form" class="py-20 md:py-32 border-t border-slate-800">
-          <div
-            class="bg-[--color-secondary-dark] p-8 md:p-12 rounded-3xl shadow-2xl max-w-4xl mx-auto border-4 border-lime-500/50"
-            data-aos="fade-up"
-          >
-            <h2 class="text-4xl font-extrabold text-white mb-4 text-center">
-              Ready to Accelerate?
-            </h2>
-            <p class="text-xl text-gray-400 mb-10 text-center">
-              Schedule your confidential, no-obligation discovery call today.
-            </p>
-
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  for="name"
-                  class="block text-sm font-medium text-gray-400 mb-2"
-                  >Full Name</label
-                >
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="John Doe"
-                  class="w-full"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-gray-400 mb-2"
-                  >Work Email</label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="work@company.com"
-                  class="w-full"
-                  required
-                />
-              </div>
-              <div class="md:col-span-2">
-                <label
-                  for="company"
-                  class="block text-sm font-medium text-gray-400 mb-2"
-                  >Company Name & Role</label
-                >
-                <input
-                  type="text"
-                  id="company"
-                  placeholder="Acme Corp - VP of Sales"
-                  class="w-full"
-                  required
-                />
-              </div>
-              <div class="md:col-span-2">
-                <label
-                  for="message"
-                  class="block text-sm font-medium text-gray-400 mb-2"
-                  >Growth Challenge Summary</label
-                >
-                <textarea
-                  id="message"
-                  rows="4"
-                  placeholder="Our Q4 conversion rates are lagging 15% behind target..."
-                  class="w-full"
-                ></textarea>
-              </div>
-              <div class="md:col-span-2">
-                <button type="submit" class="w-full btn-primary py-4">
-                  SUBMIT FOR REVIEW
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </div>
-      <div id="about" class="section-container">
-        <h2
-          class="text-5xl font-extrabold text-white mb-16 text-center"
-          data-aos="fade-down"
-        >
-          The SalesAdvisors Story
-        </h2>
-
-        <section class="mb-20">
-          <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-              <img
-                src="https://placehold.co/800x500/102235/b6f100?text=Mission+Image+%7C+Data-Driven+Growth"
-                alt="Our Mission"
-                class="rounded-2xl shadow-2xl w-full"
-              />
-            </div>
-            <div data-aos="fade-left">
-              <p class="text-sm uppercase tracking-widest text-lime-400 mb-2">
-                Our Foundation
-              </p>
-              <h3 class="text-4xl font-bold mb-6 text-white">Why We Exist</h3>
-              <p class="text-gray-300 text-lg mb-6">
-                SalesAdvisors was founded by a team of former Fortune 500 Sales
-                Executives and Private Equity Operating Partners who saw a gap
-                in the market: advisory firms that talk strategy but fail on
-                execution. We are built on the principle that *sales is a
-                science*, and our value is measured by the **equity value
-                increase** we generate.
-              </p>
-              <ul class="space-y-3 text-gray-400">
-                <li>
-                  <i class="fas fa-check-circle text-lime-400 mr-2"></i>
-                  Actionable, executable playbooks.
-                </li>
-                <li>
-                  <i class="fas fa-check-circle text-lime-400 mr-2"></i>
-                  Technology-agnostic, results-focused.
-                </li>
-                <li>
-                  <i class="fas fa-check-circle text-lime-400 mr-2"></i>
-                  Unmatched industry expertise in RevOps.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="py-16 border-t border-b border-slate-800 mb-20">
-          <h3
-            class="text-3xl font-bold mb-10 text-center text-white"
+      <section
+        id="booking-links"
+        class="relative py-24 bg-slate-800"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6 text-center">
+          <h2
+            class="text-4xl font-extrabold text-white mb-6"
             data-aos="fade-up"
           >
-            Our Core Values
-          </h3>
-          <div class="grid md:grid-cols-3 gap-8">
+            Find Your Next Step
+          </h2>
+          <p
+            class="text-xl text-gray-400 mb-16 max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Choose the consultation path that aligns with your current strategic
+            priority.
+          </p>
+
+          <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div
-              class="text-center p-6 bg-[--color-secondary-dark] rounded-2xl shadow-xl"
-              data-aos="flip-up"
-              data-aos-delay="100"
-            >
-              <i class="fas fa-chart-bar text-lime-400 text-4xl mb-4"></i>
-              <h4 class="text-xl font-semibold mb-2 text-white">Data First</h4>
-              <p class="text-gray-400 text-sm">
-                Every decision must be grounded in objective metrics, not
-                guesswork.
-              </p>
-            </div>
-            <div
-              class="text-center p-6 bg-[--color-secondary-dark] rounded-2xl shadow-xl"
-              data-aos="flip-up"
+              class="bg-slate-900 p-8 rounded-3xl shadow-2xl border-t-8 border-amber-500 text-center"
+              data-aos="zoom-in-up"
               data-aos-delay="200"
             >
-              <i
-                class="fas fa-hand-holding-usd text-lime-400 text-4xl mb-4"
-              ></i>
-              <h4 class="text-xl font-semibold mb-2 text-white">
-                Value Driven
-              </h4>
-              <p class="text-gray-400 text-sm">
-                Our success is directly tied to the financial uplift we create
-                for clients.
+              <i class="fas fa-piggy-bank text-amber-400 text-5xl mb-6"></i>
+              <h3 class="text-2xl font-bold text-white mb-3">
+                Equity Value Strategy
+              </h3>
+              <p class="text-gray-400 mb-6 text-sm">
+                For Private Equity firms focused on accelerating valuation for
+                exit.
               </p>
+              <a
+                href="#contact"
+                class="btn-charged text-sm bg-amber-500 text-slate-900 hover:bg-amber-400 min-w-0"
+              >
+                Schedule PE Session
+              </a>
             </div>
+
             <div
-              class="text-center p-6 bg-[--color-secondary-dark] rounded-2xl shadow-xl"
-              data-aos="flip-up"
+              class="bg-slate-900 p-8 rounded-3xl shadow-2xl border-t-8 border-amber-500 text-center"
+              data-aos="zoom-in-up"
               data-aos-delay="300"
             >
-              <i class="fas fa-people-arrows text-lime-400 text-4xl mb-4"></i>
-              <h4 class="text-xl font-semibold mb-2 text-white">Partnership</h4>
-              <p class="text-gray-400 text-sm">
-                We embed within your team, acting as an extension of your
-                leadership.
+              <i class="fas fa-briefcase text-amber-400 text-5xl mb-6"></i>
+              <h3 class="text-2xl font-bold text-white mb-3">
+                Enterprise GTM Review
+              </h3>
+              <p class="text-gray-400 mb-6 text-sm">
+                For VP/C-Level executives seeking full-scale organizational and
+                process alignment.
               </p>
+              <a
+                href="#contact"
+                class="btn-charged text-sm bg-amber-500 text-slate-900 hover:bg-amber-400 min-w-0"
+              >
+                Request GTM Review
+              </a>
             </div>
-          </div>
-        </section>
 
-        <section class="mb-10">
-          <h3
-            class="text-3xl font-bold mb-10 text-center text-white"
-            data-aos="fade-up"
-          >
-            Our Leadership
-          </h3>
-          <div class="grid md:grid-cols-4 gap-8">
-            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-              <img
-                src="https://placehold.co/200x200/475569/fff?text=John+D."
-                alt="John Doe"
-                class="rounded-full w-32 h-32 mx-auto mb-4 object-cover border-4 border-lime-500/50 shadow-lg"
-              />
-              <h4 class="text-xl font-semibold text-white">John Doe</h4>
-              <p class="text-sm text-lime-400">Chief Strategy Officer</p>
-              <p class="text-xs text-gray-500 mt-2">Ex-VP Sales, GlobalTech</p>
-            </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-              <img
-                src="https://placehold.co/200x200/475569/fff?text=Jane+S."
-                alt="Jane Smith"
-                class="rounded-full w-32 h-32 mx-auto mb-4 object-cover border-4 border-lime-500/50 shadow-lg"
-              />
-              <h4 class="text-xl font-semibold text-white">Jane Smith</h4>
-              <p class="text-sm text-lime-400">Head of Operations</p>
-              <p class="text-xs text-gray-500 mt-2">
-                Former PE Operating Partner
+            <div
+              class="bg-slate-900 p-8 rounded-3xl shadow-2xl border-t-8 border-amber-500 text-center"
+              data-aos="zoom-in-up"
+              data-aos-delay="400"
+            >
+              <i class="fas fa-user-tie text-amber-400 text-5xl mb-6"></i>
+              <h3 class="text-2xl font-bold text-white mb-3">
+                Talent & Coaching
+              </h3>
+              <p class="text-gray-400 mb-6 text-sm">
+                Focused consulting on sales hiring, onboarding, and ongoing
+                performance coaching.
               </p>
+              <a
+                href="#contact"
+                class="btn-charged text-sm bg-amber-500 text-slate-900 hover:bg-amber-400 min-w-0"
+              >
+                Explore Talent Services
+              </a>
             </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-              <img
-                src="https://placehold.co/200x200/475569/fff?text=Alex+P."
-                alt="Alex Peterson"
-                class="rounded-full w-32 h-32 mx-auto mb-4 object-cover border-4 border-lime-500/50 shadow-lg"
-              />
-              <h4 class="text-xl font-semibold text-white">Alex Peterson</h4>
-              <p class="text-sm text-lime-400">Lead Consultant</p>
-              <p class="text-xs text-gray-500 mt-2">RevOps & CRM Specialist</p>
-            </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-              <img
-                src="https://placehold.co/200x200/475569/fff?text=Maria+R."
-                alt="Maria Rodriguez"
-                class="rounded-full w-32 h-32 mx-auto mb-4 object-cover border-4 border-lime-500/50 shadow-lg"
-              />
-              <h4 class="text-xl font-semibold text-white">Maria Rodriguez</h4>
-              <p class="text-sm text-lime-400">Market Analyst</p>
-              <p class="text-xs text-gray-500 mt-2">M&A Integration Focus</p>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <div id="booking" class="section-container">
-        <h2
-          class="text-5xl font-extrabold text-white mb-6 text-center"
-          data-aos="fade-down"
-        >
-          Book Your Time Slot
-        </h2>
-        <p
-          class="text-xl text-gray-400 mb-16 text-center max-w-3xl mx-auto"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          To ensure the most productive conversation, please select the link
-          that best matches your needs.
-        </p>
-
-        <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div
-            class="bg-[--color-secondary-dark] p-8 rounded-3xl shadow-2xl border-t-8 border-lime-500/80 text-center"
-            data-aos="zoom-in-up"
-            data-aos-delay="200"
-          >
-            <i class="fas fa-piggy-bank text-lime-400 text-5xl mb-6"></i>
-            <h3 class="text-2xl font-bold text-white mb-3">
-              Private Equity / M&A
-            </h3>
-            <p class="text-gray-400 mb-6 text-sm">
-              For Operating Partners or Due Diligence teams discussing
-              pre-acquisition sales audits or post-deal value creation.
-            </p>
-            <a
-              href="https://placehold.co/600x100/b6f100/081628?text=Book+PE+Consultation+(External+Link)"
-              target="_blank"
-              class="block w-full btn-primary py-4"
-            >
-              Book PE Strategy Session
-            </a>
-          </div>
-
-          <div
-            class="bg-[--color-secondary-dark] p-8 rounded-3xl shadow-2xl border-t-8 border-lime-500/80 text-center"
-            data-aos="zoom-in-up"
-            data-aos-delay="300"
-          >
-            <i class="fas fa-briefcase text-lime-400 text-5xl mb-6"></i>
-            <h3 class="text-2xl font-bold text-white mb-3">
-              Enterprise Leadership
-            </h3>
-            <p class="text-gray-400 mb-6 text-sm">
-              For C-Level Executives or VPs of Sales seeking full-scale
-              transformation or go-to-market strategy alignment.
-            </p>
-            <a
-              href="https://placehold.co/600x100/b6f100/081628?text=Book+Enterprise+Session+(External+Link)"
-              target="_blank"
-              class="block w-full btn-primary py-4"
-            >
-              Book Enterprise Review
-            </a>
-          </div>
-
-          <div
-            class="bg-[--color-secondary-dark] p-8 rounded-3xl shadow-2xl border-t-8 border-lime-500/80 text-center"
-            data-aos="zoom-in-up"
-            data-aos-delay="400"
-          >
-            <i class="fas fa-comments text-lime-400 text-5xl mb-6"></i>
-            <h3 class="text-2xl font-bold text-white mb-3">
-              General Inquiries
-            </h3>
-            <p class="text-gray-400 mb-6 text-sm">
-              For partnership requests, media inquiries, or other general
-              discussions with our advisory team.
-            </p>
-            <a
-              href="https://placehold.co/600x100/b6f100/081628?text=Book+General+Inquiry+(External+Link)"
-              target="_blank"
-              class="block w-full btn-primary py-4"
-            >
-              Book General Discussion
-            </a>
           </div>
         </div>
+      </section>
 
-        <p
-          class="text-center text-gray-500 mt-12 text-sm"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          All booking links are routed to external, secure scheduling tools
-          (e.g., Calendly/HubSpot).
-        </p>
-      </div>
+      <section id="contact" class="relative py-24 bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+          <div
+            class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col md:flex-row"
+          >
+            <div
+              class="md:w-5/12 bg-slate-900 p-10 flex flex-col justify-between text-white relative"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-amber-500 rounded-full blur-[60px] opacity-20"
+              ></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-6">Start the Conversation</h3>
+                <p class="text-slate-300 mb-8">
+                  We will respond within one business day.
+                </p>
+
+                <div class="space-y-4">
+                  <div class="flex items-center space-x-3 text-slate-300">
+                    <i class="fa-solid fa-phone text-amber-400"></i>
+                    <span>+1 (555) 123-4567</span>
+                  </div>
+                  <div class="flex items-center space-x-3 text-slate-300">
+                    <i class="fa-solid fa-envelope text-amber-400"></i>
+                    <span>growth@chargedconsulting.com</span>
+                  </div>
+                  <div class="flex items-center space-x-3 text-slate-300">
+                    <i class="fa-solid fa-location-dot text-amber-400"></i>
+                    <span>Global Headquarters, NYC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="md:w-7/12 p-10">
+              <h3 class="text-2xl font-bold text-slate-900 mb-6">
+                Submit Your Inquiry
+              </h3>
+              <form
+                onsubmit="event.preventDefault(); alertMessage('Request sent! We will contact you shortly.', 'success');"
+                class="space-y-5"
+              >
+                <div class="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2"
+                      >Full Name</label
+                    >
+                    <input type="text" class="w-full" placeholder="John Doe" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2"
+                      >Work Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="work@company.com"
+                      class="w-full"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2"
+                    >Company Name & Role</label
+                  >
+                  <input
+                    type="text"
+                    id="company"
+                    placeholder="Acme Corp - CEO/VP"
+                    class="w-full"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2"
+                    >Challenge Summary</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="3"
+                    placeholder="Tell us about your sales goals..."
+                    class="w-full"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-amber-500 text-slate-900 font-bold py-4 rounded-xl hover:bg-amber-400 transition shadow-lg transform active:scale-[0.98] text-lg"
+                >
+                  Submit for Review
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <section
-      class="mt-20 py-16 bg-[--color-secondary-dark] border-t border-b border-lime-500/50 shadow-2xl"
-      data-aos="fade-up"
-    >
-      <div
-        class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between"
-      >
-        <div class="text-center md:text-left mb-6 md:mb-0">
-          <h2
-            class="text-4xl md:text-5xl font-extrabold text-white leading-tight"
-          >
-            READY TO <span class="text-lime-400">TRANSFORM</span> YOUR SALES?
-          </h2>
-          <p class="text-lg text-gray-400 mt-2">
-            Let's connect and define your non-linear growth trajectory.
-          </p>
-        </div>
-        <div class="flex items-center space-x-4">
-          <a href="#booking" class="btn-primary py-3 px-6 text-base">
-            BOOK A DISCOVERY CALL
-          </a>
-          <div class="hidden sm:flex space-x-3">
-            <a
-              href="#"
-              class="w-10 h-10 bg-slate-700/50 rounded-full flex items-center justify-center text-gray-400 hover:text-lime-400 transition"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 bg-slate-700/50 rounded-full flex items-center justify-center text-gray-400 hover:text-lime-400 transition"
-            >
-              <i class="fab fa-twitter"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-slate-950/90 border-t border-slate-800 mt-12">
-      <div
-        class="container mx-auto px-6 py-10 text-center text-gray-400 text-sm"
-      >
-        <div class="mb-4 text-2xl font-extrabold tracking-wider">
-          <span class="text-lime-400">SALES</span
-          ><span class="text-white">ADVISORS</span>
-        </div>
-        <p class="mb-4">&copy; 2025 SalesAdvisors. All rights reserved.</p>
-        <div class="space-x-4">
-          <a href="#" class="hover:text-lime-400 transition">Privacy Policy</a>
+    <footer class="bg-slate-900/90 border-t border-slate-700 py-12">
+      <div class="container mx-auto px-6 text-center">
+        <a
+          href="#hero"
+          class="flex justify-center items-center space-x-2 text-xl font-bold tracking-wider mb-6"
+        >
+          <i class="fa-solid fa-bolt text-amber-400"></i>
+          <span class="text-white">CHARGED</span
+          ><span class="text-amber-400">CONSULTING</span>
+        </a>
+        <p class="text-slate-500 mb-6">
+          &copy; 2025 Charged Consulting. All rights reserved.
+        </p>
+        <div
+          class="flex justify-center space-x-4 text-sm font-medium text-slate-500"
+        >
+          <a href="#" class="hover:text-amber-400 transition">Privacy Policy</a>
           <span class="text-gray-600">|</span>
-          <a href="#" class="hover:text-lime-400 transition"
+          <a href="#" class="hover:text-amber-400 transition"
             >Terms of Service</a
           >
         </div>
       </div>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -1019,84 +1280,60 @@
       // 1. Initialize AOS
       AOS.init({
         duration: 800,
-        once: false, 
-        disable: false, 
+        once: false,
+        disable: false,
       });
 
-      // 2. Simple Hash-Based Router
-      const pages = ["home", "about", "booking"];
-      const mobileMenu = document.getElementById("mobile-menu");
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      
-      function navigateToPage(hash) {
-        let pageId = hash.substring(1); // Remove '#'
-        if (!pages.includes(pageId)) {
-          pageId = "home"; // Default to home if hash is invalid
-        }
+      // 2. Simple Hash-Based Router (Needs to be added if not using full page refresh)
+      const pages = [
+        "hero",
+        "marketing-banner",
+        "discovery",
+        "what-we-do",
+        "impact",
+        "about",
+        "booking-links",
+        "contact",
+      ];
 
-        // Hide all pages
-        document.querySelectorAll(".section-container").forEach((section) => {
-          section.classList.remove("active-page");
+      // Function to initialize Swiper
+      function initializeSwiper() {
+        const swiper = new Swiper(".swiper", {
+          loop: true,
+          slidesPerView: 1,
+          spaceBetween: 30,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
         });
-
-        // Show the target page
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-          targetPage.classList.add("active-page");
-          // Scroll to the top of the main content when switching pages
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        AOS.refreshHard();
       }
-
-      // Handle URL hash changes
-      window.addEventListener("hashchange", () => {
-        // Close mobile menu on navigation
-        if (!mobileMenu.classList.contains("hidden")) {
-            mobileMenu.classList.add("hidden");
-            mobileMenuButton.setAttribute("aria-expanded", "false");
-        }
-        navigateToPage(window.location.hash);
-      });
-
-      // CRUCIAL: Initial load check to show the first page
-      document.addEventListener("DOMContentLoaded", () => {
-        const initialHash = window.location.hash || "#home";
-        navigateToPage(initialHash);
-        initializeSwiper(); // Initialize the swiper on load
-      });
 
       // 3. Mobile Menu Toggle
-      mobileMenuButton.addEventListener("click", function () {
-        const isExpanded = this.getAttribute("aria-expanded") === "true" || false;
-        mobileMenu.classList.toggle("hidden");
-        this.setAttribute("aria-expanded", !isExpanded);
-        
-        // Optional: Toggle the icon from bars to X
-        const icon = this.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-      });
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          const isExpanded =
+            this.getAttribute("aria-expanded") === "true" || false;
+          menu.classList.toggle("hidden");
+          this.setAttribute("aria-expanded", !isExpanded);
 
-      // 4. Form Submission Mock
-      const contactForm = document.querySelector("#contact-form form");
-      if (contactForm) {
-          contactForm.addEventListener("submit", function (e) {
-              e.preventDefault();
-              alertMessage(
-                "Thank you for your submission! We will be in touch shortly.",
-                "success"
-              );
-              this.reset(); // Clear the form
-          });
-      }
+          // Toggle icon
+          const icon = this.querySelector("i");
+          icon.classList.toggle("fa-bars");
+          icon.classList.toggle("fa-times");
+        });
 
-      // 5. Custom Alert/Message Box
+      // 4. Custom Alert/Message Box
       function alertMessage(msg, type) {
         const container = document.createElement("div");
-        container.className = `fixed bottom-5 right-5 p-4 rounded-xl shadow-2xl z-[1000] text-white transition-all duration-500 transform translate-y-full opacity-0 ${
-          type === "success" ? "bg-lime-600" : "bg-red-600"
+        container.className = `fixed bottom-5 right-5 p-4 rounded-xl shadow-2xl z-[1000] text-slate-900 transition-all duration-500 transform translate-y-full opacity-0 ${
+          type === "success" ? "bg-amber-500" : "bg-red-500"
         }`;
         container.textContent = msg;
         document.body.appendChild(container);
@@ -1114,68 +1351,9 @@
           container.addEventListener("transitionend", () => container.remove());
         }, 4000);
       }
-      
-      // 6. SWIPER (Image Carousel) Logic
-      const SLIDE_INTERVAL = 5000; // 5 seconds
-      let currentSlide = 0;
-      let swiperTimer;
 
-      function initializeSwiper() {
-          const swiperWrapper = document.getElementById('hero-swiper-wrapper');
-          const swiperContainer = document.querySelector('.swiper-container');
-          const swiperDotsContainer = document.getElementById('swiper-dots');
-          if (!swiperWrapper || !swiperContainer || !swiperDotsContainer) return;
-
-          const slides = swiperWrapper.querySelectorAll('.swiper-slide');
-          const totalSlides = slides.length;
-          
-          // Set the wrapper width for smooth sliding
-          swiperWrapper.style.width = `${totalSlides * 100}%`;
-          
-          // Create dots
-          swiperDotsContainer.innerHTML = '';
-          slides.forEach((_, index) => {
-              const dot = document.createElement('div');
-              dot.classList.add('swiper-dot');
-              if (index === 0) dot.classList.add('active');
-              dot.addEventListener('click', () => moveToSlide(index));
-              swiperDotsContainer.appendChild(dot);
-          });
-          
-          const dots = swiperDotsContainer.querySelectorAll('.swiper-dot');
-
-          function updateDots() {
-              dots.forEach((dot, index) => {
-                  dot.classList.toggle('active', index === currentSlide);
-              });
-          }
-
-          function moveToSlide(index) {
-              // Reset timer on manual move
-              clearTimeout(swiperTimer);
-              
-              currentSlide = (index + totalSlides) % totalSlides;
-              const offset = currentSlide * (swiperContainer.clientWidth / totalSlides);
-              
-              // Note: We use 100% per slide width in CSS, so the transformation uses `currentSlide * slideWidth`
-              swiperWrapper.style.transform = `translateX(-${currentSlide * 100 / totalSlides}%)`;
-              
-              updateDots();
-              // Restart the automatic sliding timer
-              startSwiperTimer();
-          }
-
-          function nextSlide() {
-              moveToSlide(currentSlide + 1);
-          }
-          
-          function startSwiperTimer() {
-              swiperTimer = setTimeout(nextSlide, SLIDE_INTERVAL);
-          }
-          
-          // Initial start
-          startSwiperTimer();
-      }
+      // Initialize Swiper on page load
+      document.addEventListener("DOMContentLoaded", initializeSwiper);
     </script>
   </body>
 </html>

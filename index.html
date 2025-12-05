@@ -41,39 +41,85 @@
 
   <body class="antialiased scroll-to-section">
     <header
-      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xl border-b border-slate-100"
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xl border-b border-lime-500/30"
     >
-      <nav class="mx-auto flex justify-between items-center">
-        <div
-          class="hidden mr-[20rem] md:flex space-x-8 items-center font-medium"
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#home"
+          class="text-2xl font-extrabold tracking-wider flex items-center space-x-2"
         >
-          <a href="#hero" class="mr-[37rem]">
-            <img
-              src="/assets/Charged consulting logo small.jpeg"
-              alt="logo"
-              class="rounded-2xl h-[70px] w-[70px]"
-            />
-          </a>
+          <span class="text-lime-400">SALES</span
+          ><span class="text-white">ADVISORS</span>
+        </a>
 
-          <a href="#about" class="text-slate-600 hover:text-blue-600 transition"
-            >About</a
+        <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+          <a
+            href="#home"
+            class="nav-link hover:text-gradient transition"
+            data-page="home"
+            >Home</a
           >
           <a
-            href="#impact"
-            class="text-slate-600 hover:text-blue-600 transition"
-            >Impact</a
+            href="#about"
+            class="nav-link hover:text-gradient transition"
+            data-page="about"
+            >About Us</a
           >
-
-          <a href="#contact" class="btn-charged px-5 py-2.5 min-w-0">
-            Book Now
-          </a>
+          <a
+            href="#contact-form"
+            class="nav-link hover:text-gradient transition"
+            data-page="contact"
+            >Contact</a
+          >
+          <a
+            href="#booking"
+            class="nav-link px-4 py-2 bg-grtext-gradient text-slate-900 rounded-xl font-bold hover:bg-lime-400 transition duration-300 shadow-md"
+            data-page="booking"
+            >Book a Call</a
+          >
         </div>
 
-        <!-- Mobile Menu Button (Placeholder) -->
-        <button class="md:hidden text-slate-900 text-2xl">
-          <i class="fa-solid fa-bars"></i>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-white focus:outline-none"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bars text-xl"></i>
         </button>
       </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden px-6 pb-4 space-y-2 bg-slate-200"
+      >
+        <a
+          href="#home"
+          class="nav-link block py-3 hover:text-gray-400 transition border-b border-slate-800"
+          data-page="home"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="nav-link block py-3 hover:text-gray-400 transition border-b border-slate-800"
+          data-page="about"
+          >About Us</a
+        >
+        <a
+          href="#contact-form"
+          class="nav-link block py-3 hover:text-gray-400 transition border-b border-slate-800"
+          data-page="contact"
+          >Contact</a
+        >
+        <a
+          href="#booking"
+          class="nav-link block py-3 text-gray-400 font-semibold"
+          data-page="booking"
+          >Book a Call</a
+        >
+      </div>
     </header>
 
     <main>
@@ -82,7 +128,9 @@
         id="hero"
         class="relative pt-20 pb-32 overflow-hidden shadow-2xl bg-white shadow-slate-300"
       >
-        <div class="container pt-10 mx-auto px-6 relative z-10 min-h-[600px]">
+        <div
+          class="container pt-10 mx-auto px-6 relative z-10 min-h-[600px] bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
+        >
           <div class="swiper mt-16 h-full">
             <div class="swiper-wrapper">
               <div class="swiper-slide" data-aos="fade-up">
@@ -203,9 +251,11 @@
       <!-- NEW SECTION 2: MARKETING BANNER (Full Width, below Hero) - INSERTED HERE -->
       <section
         id="marketing-banner"
-        class="relative py-16 solid-section shadow-2xl shadow-slate-300"
+        class="relative py-16 solid-section shadow-2xl shadow-slate-900"
       >
-        <div class="container mx-auto px-6">
+        <div
+          class="container mx-auto px-6 bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl min-h-[600px] bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
+        >
           <div class="banner-below-hero" data-aos="fade-up">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
               <!-- Left Column: Image (Matching Hero Style) -->
@@ -277,17 +327,29 @@
                     Users run advanced financial solutions.
                   </p>
                 </div>
+
+                <!-- Card 3 -->
+                <div
+                  class="p-6 bg-white rounded-2xl shadow-lg border border-slate-200 text-center"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                >
+                  <i class="fas fa-chart-area text-3xl text-blue-600 mb-3"></i>
+                  <p class="text-xl font-bold text-slate-900">
+                    5ox Time-to-Value
+                  </p>
+                  <p class="text-sm text-slate-500">
+                    Users run advanced financial solutions.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
       </section>
 
-      <!-- SECTION: DISCOVERY/JOURNEY BANNER (Based on user image) - NOW SECTION 3 -->
+      <!-- SECTION 3: DISCOVERY/JOURNEY BANNER (Based on user image) - NOW SECTION 3 -->
       <section
         id="discovery"
         class="relative py-24 solid-section shadow-2xl shadow-slate-300"
@@ -399,12 +461,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- NEW SECTION: WHAT IS SALES ADVISORY (Webflow Style Redesign - Improved) - NOW SECTION 4 -->
+      <!-- NEW SECTION 4: WHAT IS SALES ADVISORY (Webflow Style Redesign - Improved) - NOW SECTION 4 -->
       <section
         id="what-we-do"
         class="relative py-24 solid-section shadow-2xl shadow-slate-300"
@@ -429,8 +489,8 @@
               </p>
               <div class="mt-8">
                 <a
-                  href="#methodology"
-                  class="btn-charged bg-blue-600 text-white hover:bg-blue-700 inline-block text-base min-w-0"
+                  href="#contact"
+                  class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
                   >See Our Framework</a
                 >
               </div>
@@ -499,18 +559,16 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- SECTION 2: SOCIAL PROOF / LOGOS (NOW SECTION 5) -->
+      <!-- SECTION 5: SOCIAL PROOF / LOGOS (NOW SECTION 5) -->
       <section
         class="py-10 border-y border-slate-200 solid-section shadow-2xl shadow-slate-300"
       >
         <div class="container mx-auto px-6">
           <p
-            class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8"
+            class="text-center text-4xl font-semibold text-slate-400 uppercase tracking-widest mb-8"
             data-aos="fade-up"
           >
             Trusted by Top Accelerators
@@ -557,12 +615,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- SECTION 3: IMPACT STATS (Animated Numbers) - NOW SECTION 6 -->
+      <!-- SECTION 6: IMPACT STATS (Animated Numbers) - NOW SECTION 6 -->
       <section
         id="impact"
         class="relative py-20 bg-slate-50 shadow-2xl shadow-slate-300"
@@ -642,12 +698,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- NEW SECTION 2: MARKETING BANNER (Full Width, below Hero) - INSERTED HERE -->
+      <!-- NEW SECTION 7: MARKETING BANNER (Full Width, below Hero) - INSERTED HERE -->
       <section
         id="marketing-banner"
         class="relative py-16 solid-section shadow-2xl shadow-slate-300"
@@ -694,12 +748,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- SECTION 4: WHO WE SERVE - NOW SECTION 8 -->
+      <!-- SECTION 8: WHO WE SERVE - NOW SECTION 8 -->
       <section
         id="serve"
         class="relative py-24 solid-section shadow-2xl shadow-slate-300"
@@ -786,12 +838,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- NEW BANNER 3: Find your Sales Bottleneck (CTA) - NOW SECTION 9 -->
+      <!-- NEW BANNER 9: Find your Sales Bottleneck (CTA) - NOW SECTION 9 -->
       <section
         class="relative py-16 bg-slate-900 shadow-2xl shadow-slate-900/50"
         data-aos="fade-up"
@@ -818,7 +868,7 @@
         ></div>
       </section>
 
-      <!-- NEW SECTION 5: Methodology Deep Dive - NOW SECTION 10 -->
+      <!-- NEW SECTION 10: Methodology Deep Dive - NOW SECTION 10 -->
       <section
         id="methodology"
         class="relative py-24 bg-slate-900 shadow-2xl shadow-slate-900/50"
@@ -878,12 +928,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- NEW BANNER 2: Sales Team Photo Banner (Replicating User Image) - NOW SECTION 11 -->
+      <!-- NEW BANNER 11: Sales Team Photo Banner (Replicating User Image) - NOW SECTION 11 -->
       <section
         class="relative py-16 bg-white shadow-2xl shadow-slate-300"
         data-aos="fade-up"
@@ -918,12 +966,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- SECTION 6: ABOUT US / LEADERSHIP - NOW SECTION 12 -->
+      <!-- SECTION 12: ABOUT US / LEADERSHIP - NOW SECTION 12 -->
       <section
         id="about"
         class="relative py-24 solid-section shadow-2xl shadow-slate-300"
@@ -1021,12 +1067,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- NEW BANNER 4: Contact/Book Now (Large Footer CTA) - NOW SECTION 13 -->
+      <!-- NEW BANNER 13: Contact/Book Now (Large Footer CTA) - NOW SECTION 13 -->
       <section
         class="relative py-16 bg-blue-700 shadow-2xl shadow-blue-500/50"
         data-aos="fade-up"
@@ -1043,12 +1087,10 @@
           </a>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- NEW SECTION 7: Booking Links (Call to Action) - NOW SECTION 14 -->
+      <!-- NEW SECTION 14: Booking Links (Call to Action) - NOW SECTION 14 -->
       <section
         id="booking-links"
         class="relative py-24 bg-slate-900 shadow-2xl shadow-slate-900/50"
@@ -1138,12 +1180,10 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
-      <!-- SECTION 8: CONTACT FORM - NOW SECTION 15 -->
+      <!-- SECTION 15: CONTACT FORM - NOW SECTION 15 -->
       <section
         id="contact"
         class="relative py-24 solid-section shadow-2xl shadow-slate-300"
@@ -1244,9 +1284,7 @@
           </div>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
     </main>
 
