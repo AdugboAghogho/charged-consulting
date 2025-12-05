@@ -469,7 +469,9 @@
         id="what-we-do"
         class="relative py-24 solid-section shadow-2xl shadow-slate-300"
       >
-        <div class="container mx-auto px-6">
+        <div
+          class="container mx-auto px-6 bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
+        >
           <div class="webflow-sticky-container">
             <!-- Sticky Headline Column (Left) -->
             <div class="webflow-sticky-headline" data-aos="fade-right">
@@ -566,7 +568,9 @@
       <section
         class="py-10 border-y border-slate-200 solid-section shadow-2xl shadow-slate-300"
       >
-        <div class="container mx-auto px-6">
+        <div
+          class="container mx-auto px-6 bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
+        >
           <p
             class="text-center text-4xl font-semibold text-slate-400 uppercase tracking-widest mb-8"
             data-aos="fade-up"
@@ -621,9 +625,12 @@
       <!-- SECTION 6: IMPACT STATS (Animated Numbers) - NOW SECTION 6 -->
       <section
         id="impact"
-        class="relative py-20 bg-slate-50 shadow-2xl shadow-slate-300"
+        class="relative py-20 bg-slate-50"
+        data-aos="fade-up"
       >
-        <div class="container mx-auto px-6">
+        <div
+          class="container mx-auto px-6 bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
+        >
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
               <h2 class="text-4xl font-bold text-slate-900 mb-6">
@@ -636,69 +643,94 @@
               </p>
               <a
                 href="#contact"
-                class="btn-charged bg-blue-600 text-white hover:bg-blue-700 inline-block min-w-0"
+                class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
                 >Calculate Your ROI</a
               >
             </div>
-            <!-- Stats Grid -->
             <div
-              class="bg-white rounded-2xl border border-slate-200 shadow-xl grid grid-cols-2 overflow-hidden"
+              class="grid grid-cols-2 gap-6"
               data-aos="zoom-in"
               data-section="impact"
             >
-              <!-- Metric 1 -->
-              <div class="stat-item text-center">
-                <p class="text-4xl font-extrabold text-slate-900 mb-2">
-                  <span class="count-up" data-target="500" data-suffix="M+"
-                    >$</span
+              <div
+                class="p-6 bg-white rounded-2xl shadow-xl border-t-4 border-blue-600"
+              >
+                <p
+                  class="text-3xl lg:text-4xl font-extrabold text-blue-600 mb-1"
+                >
+                  <span
+                    class="count-up"
+                    data-target="500"
+                    data-prefix="$"
+                    data-suffix="M+"
                   >
+                    $500M+
+                  </span>
                 </p>
-                <p class="text-sm text-slate-500 font-medium">
+                <p class="text-lg font-semibold text-slate-900 mb-2">
                   Revenue Generated
                 </p>
-              </div>
-              <!-- Metric 2 -->
-              <div class="stat-item text-center">
-                <p class="text-4xl font-extrabold text-slate-900 mb-2">
-                  <span
-                    class="count-up"
-                    data-target="300"
-                    data-suffix="+"
-                  ></span>
-                </p>
                 <p class="text-sm text-slate-500 font-medium">
+                  (Lifetime value for clients)
+                </p>
+              </div>
+
+              <div
+                class="p-6 bg-white rounded-2xl shadow-xl border-t-4 border-blue-600"
+              >
+                <p
+                  class="text-3xl lg:text-4xl font-extrabold text-blue-600 mb-1"
+                >
+                  <span class="count-up" data-target="300" data-suffix="+">
+                    300+
+                  </span>
+                </p>
+                <p class="text-lg font-semibold text-slate-900 mb-2">
                   Companies Scaled
                 </p>
-              </div>
-              <!-- Metric 3 -->
-              <div class="stat-item text-center">
-                <p class="text-4xl font-extrabold text-slate-900 mb-2">
-                  <span
-                    class="count-up"
-                    data-target="35"
-                    data-suffix="%"
-                  ></span>
-                </p>
                 <p class="text-sm text-slate-500 font-medium">
+                  (Across 15+ industries)
+                </p>
+              </div>
+
+              <div
+                class="p-6 bg-white rounded-2xl shadow-xl border-t-4 border-blue-600"
+              >
+                <p
+                  class="text-3xl lg:text-4xl font-extrabold text-blue-600 mb-1"
+                >
+                  <span class="count-up" data-target="35" data-suffix="%">
+                    35%
+                  </span>
+                </p>
+                <p class="text-lg font-semibold text-slate-900 mb-2">
                   Avg. Conversion Lift
                 </p>
-              </div>
-              <!-- Metric 4 -->
-              <div class="stat-item text-center">
-                <p class="text-4xl font-extrabold text-slate-900 mb-2">
-                  <span
-                    class="count-up"
-                    data-target="10"
-                    data-suffix="x"
-                  ></span>
+                <p class="text-sm text-slate-500 font-medium">
+                  (Pipeline to Closed Won)
                 </p>
-                <p class="text-sm text-slate-500 font-medium">ROI Year One</p>
+              </div>
+
+              <div
+                class="p-6 bg-white rounded-2xl shadow-xl border-t-4 border-blue-600"
+              >
+                <p
+                  class="text-3xl lg:text-4xl font-extrabold text-blue-600 mb-1"
+                >
+                  <span class="count-up" data-target="10" data-suffix="x">
+                    10x
+                  </span>
+                </p>
+                <p class="text-lg font-semibold text-slate-900 mb-2">
+                  ROI Year One
+                </p>
+                <p class="text-sm text-slate-500 font-medium">
+                  (Guaranteed return framework)
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <!-- Shadow at end of section -->
-        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
       <!-- NEW SECTION 7: MARKETING BANNER (Full Width, below Hero) - INSERTED HERE -->
@@ -707,41 +739,45 @@
         class="relative py-16 solid-section shadow-2xl shadow-slate-300"
       >
         <div class="container mx-auto px-6">
-          <div class="banner-below-hero" data-aos="fade-up">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-              <!-- Left Column: Image (Matching Hero Style) -->
+          <div
+            class="bg-white w-full p-6 md:p-10 rounded-3xl shadow-xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+          >
+            <!-- Left Column: Image (Matching Hero Style) -->
+            <div
+              class="rounded-3xl overflow-hidden shadow-2xl"
+              data-aos="fade-right"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=cover"
+                alt="Business people collaborating"
+                class="w-[60%] h-[40%] object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x400/475569/94a3b8?text=Team+Collaboration';"
+              />
+
               <div
-                class="relative rounded-3xl overflow-hidden shadow-2xl"
-                data-aos="fade-right"
+                class="absolute inset-0 bg-slate-900/40 p-8 flex flex-col justify-end"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=cover"
-                  alt="Business people collaborating"
-                  class="w-full h-auto object-cover"
-                  onerror="this.onerror=null;this.src='https://placehold.co/800x400/475569/94a3b8?text=Team+Collaboration';"
-                />
-                <div
-                  class="absolute inset-0 bg-slate-900/40 p-8 flex flex-col justify-end"
-                >
-                  <h3 class="text-3xl font-extrabold text-white mb-2">
-                    Build & Growth with Scalable Tools
-                  </h3>
-                  <p class="text-slate-200 text-sm">
-                    Founded by data experts, design platforms tailored for
-                    business growth.
-                  </p>
-                  <div class="flex mt-4 space-x-3">
-                    <a
-                      href="#contact"
-                      class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
-                      >Get Started</a
-                    >
-                    <a
-                      href="#booking-links"
-                      class="px-5 py-2.5 bg-white text-slate-900 rounded-[3rem] font-bold text-sm hover:bg-slate-100 transition"
-                      >Free trial</a
-                    >
-                  </div>
+                <h3 class="text-3xl font-extrabold text-white mb-2">
+                  Build & Growth with Scalable Tools
+                </h3>
+
+                <p class="text-slate-200 text-sm">
+                  Founded by data experts, design platforms tailored for
+                  business growth.
+                </p>
+
+                <div class="flex mt-4 space-x-3">
+                  <a
+                    href="#contact"
+                    class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
+                    >Get Started</a
+                  >
+                  <a
+                    href="#contact"
+                    class="px-5 py-2.5 bg-white text-slate-900 rounded-[3rem] font-bold text-sm hover:bg-slate-100 transition"
+                    >Free trial</a
+                  >
                 </div>
               </div>
             </div>
@@ -752,11 +788,10 @@
       </section>
 
       <!-- SECTION 8: WHO WE SERVE - NOW SECTION 8 -->
-      <section
-        id="serve"
-        class="relative py-24 solid-section shadow-2xl shadow-slate-300"
-      >
-        <div class="container mx-auto px-6">
+      <section id="serve" class="relative py-24 solid-section">
+        <div
+          class="container mx-auto bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
+        >
           <h2
             class="text-4xl font-bold text-slate-900 mb-12 text-center"
             data-aos="fade-up"
@@ -770,8 +805,10 @@
               data-aos="zoom-in"
               data-aos-delay="100"
             >
-              <div class="card-icon-container bg-blue-600 text-white">
-                <i class="fas fa-piggy-bank text-2xl"></i>
+              <div
+                class="card-icon-container w-10 h-10 rounded-[2rem] bg-blue-600 text-white"
+              >
+                <i class="fas fa-piggy-bank text-2xl pl-[5px] pt-[3px]"></i>
               </div>
               <h3 class="text-xl font-semibold mb-3 text-slate-900">
                 Private Equity
@@ -788,8 +825,10 @@
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              <div class="card-icon-container bg-blue-600 text-white">
-                <i class="fas fa-building text-2xl"></i>
+              <div
+                class="card-icon-container rounded-[2rem] w-10 h-10 bg-blue-600 text-white"
+              >
+                <i class="fas fa-building text-2xl pl-[10px] pt-[3px]"></i>
               </div>
               <h3 class="text-xl font-semibold mb-3 text-slate-900">
                 Mid-Market
@@ -806,8 +845,10 @@
               data-aos="zoom-in"
               data-aos-delay="300"
             >
-              <div class="card-icon-container bg-blue-600 text-white">
-                <i class="fas fa-rocket text-2xl"></i>
+              <div
+                class="card-icon-container rounded-[2rem] w-10 h-10 bg-blue-600 text-white"
+              >
+                <i class="fas fa-rocket text-2xl pl-[5px] pt-[4px]"></i>
               </div>
               <h3 class="text-xl font-semibold mb-3 text-slate-900">
                 Tech Startups
@@ -824,8 +865,10 @@
               data-aos="zoom-in"
               data-aos-delay="400"
             >
-              <div class="card-icon-container bg-blue-600 text-white">
-                <i class="fas fa-link text-2xl"></i>
+              <div
+                class="card-icon-container rounded-[2rem] w-10 h-10 bg-blue-600 text-white"
+              >
+                <i class="fas fa-link text-2xl pl-[5px] pt-[3px]"></i>
               </div>
               <h3 class="text-xl font-semibold mb-3 text-slate-900">
                 M&A Integration
@@ -857,15 +900,13 @@
           </p>
           <a
             href="#contact"
-            class="btn-charged bg-amber-500 text-slate-900 hover:bg-amber-400 inline-block min-w-0"
+            class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
           >
             Take the Free Sales Assessment
           </a>
         </div>
         <!-- Shadow at end of section -->
-        <div
-          class="absolute bottom-0 left-0 right-0 h-1 bg-slate-900 shadow-2xl"
-        ></div>
+        <div class="absolute bottom-0 left-0 right-0 h-1 shadow-2xl"></div>
       </section>
 
       <!-- NEW SECTION 10: Methodology Deep Dive - NOW SECTION 10 -->
@@ -947,7 +988,7 @@
             </h2>
             <a
               href="#contact"
-              class="btn-charged bg-blue-600 text-white hover:bg-blue-700 min-w-0"
+              class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
             >
               BOOK A DISCOVERY CALL
             </a>
@@ -974,7 +1015,9 @@
         id="about"
         class="relative py-24 solid-section shadow-2xl shadow-slate-300"
       >
-        <div class="container mx-auto px-6">
+        <div
+          class="container mx-auto px-6 bg-slate-50 p-6 md:p-12 rounded-3xl shadow-xl"
+        >
           <h2
             class="text-4xl font-bold text-slate-900 mb-12 text-center"
             data-aos="fade-up"
@@ -991,7 +1034,7 @@
               data-aos-delay="100"
             >
               <img
-                src="https://images.unsplash.com/photo-1599566150163-479fc57d452f?q=80&w=150&h=150&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&h=150&auto=format&fit=crop"
                 alt="John Doe"
                 class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-blue-500/50 shadow-lg"
               />
@@ -1029,7 +1072,7 @@
               data-aos-delay="300"
             >
               <img
-                src="https://images.unsplash.com/photo-1544723795-3fb6469e779a?q=80&w=150&h=150&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&h=150&auto=format&fit=crop"
                 alt="Alex Peterson"
                 class="rounded-full w-24 h-24 mx-auto mb-4 object-cover border-4 border-blue-500/50 shadow-lg"
               />
@@ -1050,7 +1093,7 @@
               data-aos-delay="400"
             >
               <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29329?q=80&w=150&h=150&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&h=150&auto=format&fit=crop"
                 alt="Maria Rodriguez"
                 class="rounded-full w-32 h-32 mx-auto mb-4 object-cover border-4 border-blue-500/50 shadow-lg"
               />
@@ -1081,7 +1124,7 @@
           </h2>
           <a
             href="#contact"
-            class="btn-charged bg-white text-blue-700 hover:bg-slate-200 inline-block min-w-0"
+            class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
           >
             Get Your Customized Plan
           </a>
@@ -1128,7 +1171,7 @@
               </p>
               <a
                 href="#contact"
-                class="btn-charged text-sm bg-blue-600 hover:bg-blue-700 min-w-0"
+                class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
               >
                 Schedule PE Session
               </a>
@@ -1150,7 +1193,7 @@
               </p>
               <a
                 href="#contact"
-                class="btn-charged text-sm bg-blue-600 hover:bg-blue-700 min-w-0"
+                class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
               >
                 Request GTM Review
               </a>
@@ -1172,7 +1215,7 @@
               </p>
               <a
                 href="#contact"
-                class="btn-charged text-sm bg-blue-600 hover:bg-blue-700 min-w-0"
+                class="px-5 py-2.5 bg-blue-600 text-white rounded-[3rem] font-bold text-sm hover:bg-blue-700 transition"
               >
                 Explore Talent Services
               </a>
@@ -1237,7 +1280,11 @@
                     <label class="block text-sm font-medium text-slate-700 mb-2"
                       >Full Name</label
                     >
-                    <input type="text" class="w-full" placeholder="John Doe" />
+                    <input
+                      type="text"
+                      class="w-full rounded-3xl border-slate-700"
+                      placeholder="John Doe"
+                    />
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-slate-700 mb-2"
