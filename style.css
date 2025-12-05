@@ -1,0 +1,143 @@
+:root {
+  --color-primary: #2563eb; /* Royal Blue */
+  --color-dark: #f8fafc; /* Light Background (Slate-50) */
+  --color-text-main: #0f172a; /* Slate-900 */
+  --color-accent-gold: #fbbf24; /* Amber-400 */
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-dark);
+  color: #334155; /* Slate-700 */
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    #cbd5e1 1px,
+    transparent 0
+  );
+  background-size: 30px 30px;
+}
+section {
+  box-shadow: #36a3a7;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  background-color: transparent;
+}
+
+.solid-section {
+  background-color: white;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.text-gradient {
+  background-image: linear-gradient(
+    to right,
+    #2563eb,
+    #4f46e5
+  ); /* Blue to Indigo */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-icon-container {
+  @apply w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  @apply bg-white border border-slate-200 text-slate-900 rounded-xl p-4 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 outline-none shadow-sm;
+}
+
+.stat-item {
+  @apply border-b md:border-b-0 md:border-r border-slate-200 p-6 last:border-r-0 last:border-b-0;
+}
+
+.btn-charged {
+  @apply bg-blue-600 text-white px-8 py-4 rounded-[3rem] font-bold text-lg shadow-xl min-w-[12rem] text-center inline-flex items-center justify-center hover:bg-blue-700 transition duration-300 transform hover:scale-[1.05];
+}
+.btn-secondary-light {
+  @apply bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-[3rem] font-bold text-lg shadow-xl min-w-[12rem] text-center inline-flex items-center justify-center hover:bg-slate-50 transition duration-300;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.hero-slide-content {
+  @apply bg-white/90 p-8 md:p-12 rounded-3xl shadow-2xl backdrop-blur-sm border border-slate-200;
+}
+.hero-slide-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.new-banner-container {
+  @apply p-8 md:p-16 bg-white rounded-3xl shadow-2xl border border-slate-200;
+}
+.video-placeholder {
+  @apply bg-slate-100 h-64 md:h-96 rounded-2xl flex items-center justify-center text-slate-400 text-6xl shadow-inner;
+}
+
+.webflow-sticky-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Content slightly wider than headline */
+  gap: 4rem;
+}
+.webflow-sticky-headline {
+  position: sticky;
+  top: 100px; /* Offset from header */
+  align-self: start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .webflow-sticky-container {
+    display: block;
+  }
+  .webflow-sticky-headline {
+    position: static;
+    padding-top: 0;
+  }
+}
+.delivery-card {
+  @apply p-8 bg-slate-50 rounded-2xl shadow-lg border border-slate-200 transition duration-300 mb-6 flex items-start space-x-6;
+}
+.delivery-card-content {
+  flex-grow: 1;
+}
+.delivery-card:hover {
+  @apply border-blue-500 shadow-xl scale-[1.01] transform bg-white;
+}
+.delivery-icon {
+  @apply text-4xl text-blue-600 flex-shrink-0 mt-1;
+}
+
+.banner-below-hero {
+  @apply bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-200 overflow-hidden;
+}
+
+#hero {
+  padding-top: 0;
+  padding-bottom: 3rem;
+  min-height: 0;
+}
+
+.logo-image {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
