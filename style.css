@@ -40,7 +40,7 @@ textarea {
   object-fit: cover;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 440px) {
   .framework-grid {
     grid-template-columns: 1fr !important;
   }
