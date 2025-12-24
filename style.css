@@ -39,3 +39,9 @@ textarea {
   border-radius: 1.5rem; /* rounded-3xl */
   object-fit: cover;
 }
+
+@media (max-width: 360px) {
+  .framework-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
