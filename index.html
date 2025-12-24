@@ -94,31 +94,34 @@
 
       <div
         id="mobile-menu"
-        class="hidden md:hidden px-6 pb-4 space-y-2 bg-slate-800"
+        class="hidden md:hidden px-6 pb-6 space-y-2 bg-slate-800"
       >
         <a
           href="#home"
-          class="nav-link block py-3 text-white hover:text-amber-500 transition border-b border-slate-700"
+          class="nav-link block py-4 text-white hover:text-amber-500 transition border-b border-slate-700"
           data-page="home"
           >Home</a
         >
         <a
           href="#about"
-          class="nav-link block py-3 text-white hover:text-amber-500 transition border-b border-slate-700"
+          class="nav-link block py-4 text-white hover:text-amber-500 transition border-b border-slate-700"
           data-page="about"
           >About Us</a
         >
         <a
           href="#what-we-do"
-          class="nav-link block py-3 text-white hover:text-amber-500 transition border-b border-slate-700"
+          class="nav-link block py-4 text-white hover:text-amber-500 transition border-b border-slate-700"
           >Impact</a
         >
-        <a
-          href="https://cal.com/chrismichael/30min"
-          class="nav-link px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-bold hover:bg-amber-500 scale-200 transition duration-300 shadow-md shadow-amber-500"
-          data-page="booking"
-          >Book a Call</a
-        >
+        <div class="pt-4">
+          <a
+            href="https://cal.com/chrismichael/30min"
+            class="block w-full text-center px-4 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full font-bold hover:shadow-lg hover:shadow-amber-500/50 transition duration-300 shadow-md shadow-amber-900/20"
+            data-page="booking"
+          >
+            Book a Call
+          </a>
+        </div>
       </div>
     </header>
 
@@ -266,6 +269,7 @@
         </div>
       </section>
 
+      <!-- SECTION 2: Marketing Banner -->
       <section
         id="marketing-banner"
         class="relative py-16 shadow-2xl"
@@ -276,6 +280,7 @@
             <div
               class="grid lg:grid-cols-2 gap-12 items-center bg-slate-800 p-6 md:p-12 rounded-3xl shadow-xl"
             >
+              <!-- LEFT PART -->
               <div
                 class="relative rounded-3xl overflow-hidden shadow-2xl"
                 data-aos="fade-right"
@@ -295,14 +300,14 @@
                   </h3>
                   <div class="flex mt-4">
                     <a
-                      href="#"
+                      href="https://cal.com/chrismichael/30min"
                       class="px-5 py-2.5 shadow-md shadow-gray-60 bg-amber-500 text-white rounded-full font-bold text-sm"
                       >Book a Call</a
                     >
                   </div>
                 </div>
               </div>
-
+              <!-- RIGHT PART -->
               <div
                 class="grid grid-cols-1 min-[380px]:grid-cols-2 gap-4 md:gap-6"
                 data-aos="fade-left"
@@ -357,6 +362,7 @@
           </div>
         </div>
       </section>
+      <!-- SECTION 3: DISCOVERY -->
       <section
         id="discovery"
         class="relative py-24 bg-slate-900"
@@ -426,6 +432,7 @@
         </div>
       </section>
 
+      <!-- SECTION 4: WHAT WE DO -->
       <section
         id="what-we-do"
         class="relative py-24 bg-slate-800"
@@ -450,7 +457,7 @@
               </p>
               <div class="mt-8">
                 <a
-                  href="https://cal.com/chrismichael/30mi"
+                  href="https://cal.com/chrismichael/30min"
                   class="px-5 py-2.5 bg-amber-500 shadow-md shadow-gray-500 text-white rounded-[3rem] font-bold text-sm hover:bg-amber-700 transition"
                   >See Our Framework</a
                 >
@@ -512,6 +519,7 @@
         </div>
       </section>
 
+      <!-- SECTION 5: CTA -->
       <section class="relative py-16 bg-slate-900" data-aos="fade-up">
         <div class="container mx-auto px-6 text-center max-w-4xl">
           <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
@@ -531,6 +539,7 @@
         </div>
       </section>
 
+      <!-- SECTION 6: ABOUT US (The Team) -->
       <section
         id="about"
         class="relative py-24 bg-slate-800"
@@ -620,109 +629,6 @@
           </div>
         </div>
       </section>
-
-      <!-- <section
-        id="contact"
-        class="relative py-24 bg-slate-800"
-        data-aos="fade-down"
-      >
-        <div class="container mx-auto px-6">
-          <div
-            class="max-w-4xl mx-auto bg-slate-900 rounded-3xl shadow-2xl border border-slate-700 overflow-hidden flex flex-col md:flex-row"
-          >
-            <div
-              class="md:w-5/12 bg-slate-900 p-10 flex flex-col justify-between text-white relative"
-            >
-              <div
-                class="absolute top-0 right-0 w-32 h-32 bg-amber-500 rounded-full blur-[60px] opacity-20"
-              ></div>
-              <div>
-                <h3 class="text-2xl font-bold mb-6">Start the Conversation</h3>
-                <p class="text-slate-300 mb-8">
-                  We will respond within one business day.
-                </p>
-
-                <div class="space-y-4">
-                  <div class="flex items-center space-x-3 text-slate-300">
-                    <i class="fa-solid fa-phone text-amber-400"></i>
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                  <div class="flex items-center space-x-3 text-slate-300">
-                    <i class="fa-solid fa-envelope text-amber-400"></i>
-                    <span>growth@chargedconsulting.com</span>
-                  </div>
-                  <div class="flex items-center space-x-3 text-slate-300">
-                    <i class="fa-solid fa-location-dot text-amber-400"></i>
-                    <span>Global Headquarters, NYC</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="md:w-7/12 p-10">
-              <h3 class="text-2xl font-bold text-white mb-6">
-                Submit Your Inquiry
-              </h3>
-              <form
-                onsubmit="event.preventDefault(); alertMessage('Request sent! We will contact you shortly.', 'success');"
-                class="space-y-5"
-              >
-                <div class="grid md:grid-cols-2 gap-5">
-                  <div>
-                    <label class="block text-sm font-medium text-slate-400 mb-2"
-                      >Full Name</label
-                    >
-                    <input
-                      type="text"
-                      class="w-full rounded-md border border-slate-700 bg-slate-800 text-white"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium text-slate-400 mb-2"
-                      >Work Email</label
-                    >
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="work@company.com"
-                      class="w-full border border-slate-700 rounded-md bg-slate-800 text-white"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-slate-400 mb-2"
-                    >Company Name & Role</label
-                  >
-                  <input
-                    type="text"
-                    id="company"
-                    placeholder="Acme Corp - CEO/VP"
-                    class="w-full border border-slate-700 rounded-md bg-slate-800 text-white"
-                  />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-slate-400 mb-2"
-                    >Challenge Summary</label
-                  >
-                  <textarea
-                    id="message"
-                    rows="3"
-                    placeholder="Tell us about your sales goals..."
-                    class="w-full border border-slate-700 rounded-md bg-slate-800 text-white"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full bg-amber-500 text-slate-900 font-bold py-4 rounded-full hover:bg-amber-400 transition shadow-lg transform active:scale-[0.98] text-lg"
-                >
-                  Submit for Review
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section> -->
     </main>
 
     <footer class="bg-black border-t border-slate-700 py-12">
