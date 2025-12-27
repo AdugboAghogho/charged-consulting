@@ -62,3 +62,28 @@ function alertMessage(msg, type) {
 
 // Initialize Swiper on page load
 document.addEventListener("DOMContentLoaded", initializeSwiper);
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. SET YOUR EXPIRY DATE HERE (Year, Month - 1, Day)
+  // Note: Months are 0-indexed (January is 0, December is 11)
+  const expiryDate = new Date(2026, 0, 2); // Example: Jan 2nd, 2026
+
+  const today = new Date();
+
+  if (today > expiryDate) {
+    // 2. Apply blur to the main content
+    const body = document.querySelector("body");
+    const main = document.querySelector("main");
+    const header = document.querySelector("header");
+
+    // We blur everything except the notice
+    main.classList.add("expired-blur");
+    header.classList.add("expired-blur");
+
+    // 3. Show the expiry notice
+    const notice = document.getElementById("expiry-notice");
+    if (notice) {
+      notice.style.display = "block";
+    }
+  }
+});
